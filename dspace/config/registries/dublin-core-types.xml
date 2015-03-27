@@ -84,19 +84,19 @@
   </dspace-header>
 
   <dc-schema>
-          <name>dc</name>
-          <namespace>http://dublincore.org/documents/dcmi-terms/</namespace>
+    <name>dc</name>
+    <namespace>http://dublincore.org/documents/dcmi-terms/</namespace>
   </dc-schema>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>contributor</element>
     <!-- unqualified -->
     <scope_note>A person, organization, or service responsible for the content of the resource.  Catch-all for unspecified contributors.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>contributor</element>
     <qualifier>advisor</qualifier>
     <scope_note>Use primarily for thesis advisor.</scope_note>
@@ -104,56 +104,56 @@
 
   <!-- Used by system: do not remove -->
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>contributor</element>
     <qualifier>author</qualifier>
     <scope_note></scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>contributor</element>
     <qualifier>editor</qualifier>
     <scope_note></scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>contributor</element>
     <qualifier>illustrator</qualifier>
     <scope_note></scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>contributor</element>
     <qualifier>other</qualifier>
     <scope_note></scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>coverage</element>
     <qualifier>spatial</qualifier>
     <scope_note>Spatial characteristics of content.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>coverage</element>
     <qualifier>temporal</qualifier>
     <scope_note>Temporal characteristics of content.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>creator</element>
     <!-- unqualified -->
     <scope_note>Do not use; only for harvested metadata.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>date</element>
     <!-- unqualified -->
     <scope_note>Use qualified form if possible.</scope_note>
@@ -161,7 +161,7 @@
 
   <!-- Used by system: do not remove -->
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>date</element>
     <qualifier>accessioned</qualifier>
     <scope_note>Date DSpace takes possession of item.</scope_note>
@@ -169,21 +169,21 @@
 
   <!-- Used by system: do not remove -->
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>date</element>
     <qualifier>available</qualifier>
     <scope_note>Date or date range item became available to the public.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>date</element>
     <qualifier>copyright</qualifier>
     <scope_note>Date of copyright.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>date</element>
     <qualifier>created</qualifier>
     <scope_note>Date of creation or manufacture of intellectual content if different from date.issued.</scope_note>
@@ -191,40 +191,40 @@
 
   <!-- Used by system: do not remove -->
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>date</element>
     <qualifier>issued</qualifier>
     <scope_note>Date of publication or distribution.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>date</element>
     <qualifier>submitted</qualifier>
     <scope_note>Recommend for theses/dissertations.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>identifier</element>
     <!-- unqualified -->
     <scope_note>Catch-all for unambiguous identifiers not defined by
-    qualified form; use identifier.other for a known identifier common
-    to a local collection instead of unqualified form.</scope_note>
+      qualified form; use identifier.other for a known identifier common
+      to a local collection instead of unqualified form.</scope_note>
   </dc-type>
 
   <!-- Used by system: do not remove -->
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>identifier</element>
     <qualifier>citation</qualifier>
-    <scope_note>Human-readable, standard bibliographic citation 
-    of non-DSpace format of this item</scope_note>
+    <scope_note>Human-readable, standard bibliographic citation
+      of non-DSpace format of this item</scope_note>
   </dc-type>
 
   <!-- Used by system: do not remove -->
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>identifier</element>
     <qualifier>govdoc</qualifier>
     <scope_note>A government document number</scope_note>
@@ -232,7 +232,7 @@
 
   <!-- Used by system: do not remove -->
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>identifier</element>
     <qualifier>isbn</qualifier>
     <scope_note>International Standard Book Number</scope_note>
@@ -240,14 +240,14 @@
 
   <!-- Used by system: do not remove -->
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>identifier</element>
     <qualifier>issn</qualifier>
     <scope_note>International Standard Serial Number</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>identifier</element>
     <qualifier>sici</qualifier>
     <scope_note>Serial Item and Contribution Identifier</scope_note>
@@ -255,7 +255,7 @@
 
   <!-- Used by system: do not remove -->
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>identifier</element>
     <qualifier>ismn</qualifier>
     <scope_note>International Standard Music Number</scope_note>
@@ -263,7 +263,7 @@
 
   <!-- Used by system: do not remove -->
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>identifier</element>
     <qualifier>other</qualifier>
     <scope_note>A known identifier type common to a local collection.</scope_note>
@@ -271,7 +271,7 @@
 
   <!-- Used by system: do not remove -->
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>identifier</element>
     <qualifier>uri</qualifier>
     <scope_note>Uniform Resource Identifier</scope_note>
@@ -279,7 +279,7 @@
 
   <!-- Used by system: do not remove -->
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>description</element>
     <!-- unqualified -->
     <scope_note>Catch-all for any description not defined by qualifiers.</scope_note>
@@ -287,7 +287,7 @@
 
   <!-- Used by system: do not remove -->
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>description</element>
     <qualifier>abstract</qualifier>
     <scope_note>Abstract or summary.</scope_note>
@@ -295,7 +295,7 @@
 
   <!-- Used by system: do not remove -->
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>description</element>
     <qualifier>provenance</qualifier>
     <scope_note>The history of custody of the item since its creation, including any changes successive custodians made to it.</scope_note>
@@ -303,38 +303,38 @@
 
   <!-- Used by system: do not remove -->
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>description</element>
     <qualifier>sponsorship</qualifier>
     <scope_note>Information about sponsoring agencies, individuals, or
-    contractual arrangements for the item.</scope_note>
+      contractual arrangements for the item.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>description</element>
     <qualifier>statementofresponsibility</qualifier>
     <scope_note>To preserve statement of responsibility from MARC records.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>description</element>
     <qualifier>tableofcontents</qualifier>
     <scope_note>A table of contents for a given item.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>description</element>
     <qualifier>uri</qualifier>
     <scope_note>Uniform Resource Identifier pointing to description of
-    this item.</scope_note>
+      this item.</scope_note>
   </dc-type>
 
   <!-- Used by system: do not remove -->
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>format</element>
     <!-- unqualified -->
     <scope_note>Catch-all for any format information not defined by qualifiers.</scope_note>
@@ -342,14 +342,14 @@
 
   <!-- Used by system: do not remove -->
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>format</element>
     <qualifier>extent</qualifier>
     <scope_note>Size or duration.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>format</element>
     <qualifier>medium</qualifier>
     <scope_note>Physical medium.</scope_note>
@@ -357,23 +357,23 @@
 
   <!-- Used by system: do not remove -->
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>format</element>
     <qualifier>mimetype</qualifier>
     <scope_note>Registered MIME type identifiers.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>language</element>
     <!-- unqualified -->
     <scope_note>Catch-all for non-ISO forms of the language of the
-    item, accommodating harvested values.</scope_note>
+      item, accommodating harvested values.</scope_note>
   </dc-type>
 
   <!-- Used by system: do not remove -->
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>language</element>
     <qualifier>iso</qualifier>
     <scope_note>Current ISO standard for language of intellectual content, including country codes (e.g. "en_US").</scope_note>
@@ -381,28 +381,28 @@
 
   <!-- Used by system: do not remove -->
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>publisher</element>
     <!-- unqualified -->
     <scope_note>Entity responsible for publication, distribution, or imprint.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>relation</element>
     <!-- unqualified -->
     <scope_note>Catch-all for references to other related items.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>relation</element>
     <qualifier>isformatof</qualifier>
     <scope_note>References additional physical form.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>relation</element>
     <qualifier>ispartof</qualifier>
     <scope_note>References physically or logically containing item.</scope_note>
@@ -410,99 +410,99 @@
 
   <!-- Used by system: do not remove -->
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>relation</element>
     <qualifier>ispartofseries</qualifier>
     <scope_note>Series name and number within that series, if available.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>relation</element>
     <qualifier>haspart</qualifier>
     <scope_note>References physically or logically contained item.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>relation</element>
     <qualifier>isversionof</qualifier>
     <scope_note>References earlier version.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>relation</element>
     <qualifier>hasversion</qualifier>
     <scope_note>References later version.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>relation</element>
     <qualifier>isbasedon</qualifier>
     <scope_note>References source.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>relation</element>
     <qualifier>isreferencedby</qualifier>
     <scope_note>Pointed to by referenced resource.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>relation</element>
     <qualifier>requires</qualifier>
     <scope_note>Referenced resource is required to support function,
-    delivery, or coherence of item.</scope_note>
+      delivery, or coherence of item.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>relation</element>
     <qualifier>replaces</qualifier>
     <scope_note>References preceeding item.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>relation</element>
     <qualifier>isreplacedby</qualifier>
     <scope_note>References succeeding item.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>relation</element>
     <qualifier>uri</qualifier>
     <scope_note>References Uniform Resource Identifier for related item.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>rights</element>
     <!-- unqualified -->
     <scope_note>Terms governing use and reproduction.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>rights</element>
     <qualifier>uri</qualifier>
     <scope_note>References terms governing use and reproduction.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>source</element>
     <!-- unqualified -->
     <scope_note>Do not use; only for harvested metadata.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>source</element>
     <qualifier>uri</qualifier>
     <scope_note>Do not use; only for harvested metadata.</scope_note>
@@ -510,50 +510,50 @@
 
   <!-- Used by system: do not remove -->
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>subject</element>
     <!-- unqualified -->
     <scope_note>Uncontrolled index term.</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>subject</element>
     <qualifier>classification</qualifier>
     <scope_note>Catch-all for value from local classification system;
-    global classification systems will receive specific qualifier</scope_note>
+      global classification systems will receive specific qualifier</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>subject</element>
     <qualifier>ddc</qualifier>
     <scope_note>Dewey Decimal Classification Number</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>subject</element>
     <qualifier>lcc</qualifier>
     <scope_note>Library of Congress Classification Number</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>subject</element>
     <qualifier>lcsh</qualifier>
     <scope_note>Library of Congress Subject Headings</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>subject</element>
     <qualifier>mesh</qualifier>
     <scope_note>MEdical Subject Headings</scope_note>
   </dc-type>
 
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>subject</element>
     <qualifier>other</qualifier>
     <scope_note>Local controlled vocabulary; global vocabularies will receive specific qualifier.</scope_note>
@@ -561,7 +561,7 @@
 
   <!-- Used by system: do not remove -->
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>title</element>
     <!-- unqualified -->
     <scope_note>Title statement/title proper.</scope_note>
@@ -569,33 +569,125 @@
 
   <!-- Used by system: do not remove -->
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>title</element>
     <qualifier>alternative</qualifier>
     <scope_note>Varying (or substitute) form of title proper appearing in item,
-    e.g. abbreviation or translation</scope_note>
+      e.g. abbreviation or translation</scope_note>
   </dc-type>
 
   <!-- Used by system: do not remove -->
   <dc-type>
-	<schema>dc</schema>
+    <schema>dc</schema>
     <element>type</element>
     <!-- unqualified -->
     <scope_note>Nature or genre of content.</scope_note>
   </dc-type>
 
 
-    <dc-type>
-        <schema>dc</schema>
-        <element>provenance</element>
-        <!-- unqualified -->
-        <scope_note></scope_note>
-    </dc-type>
+  <dc-type>
+    <schema>dc</schema>
+    <element>provenance</element>
+    <!-- unqualified -->
+    <scope_note></scope_note>
+  </dc-type>
 
-    <dc-type>
-        <schema>dc</schema>
-        <element>rights</element>
-        <qualifier>license</qualifier>
-        <scope_note></scope_note>
-    </dc-type>
+  <dc-type>
+    <schema>dc</schema>
+    <element>rights</element>
+    <qualifier>license</qualifier>
+    <scope_note></scope_note>
+  </dc-type>
+
+  <!-- VIREO specific metadata fields -->
+  <dc-type>
+    <schema>dc</schema>
+    <element>type</element>
+    <qualifier>material</qualifier>
+    <scope_note>ETD-MS native element; corresponds to TDL MODS &lt;mods:typeOfResource&gt;... element</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>dc</schema>
+    <element>type</element>
+    <qualifier>genre</qualifier>
+    <scope_note>ETD-MS native element; corresponds to TDL MODS &lt;mods:genre&gt;... element</scope_note>
+  </dc-type>
+
+  <dc-schema>
+    <name>thesis</name>
+    <namespace>http://www.tdl.org/NS/tdl-dc</namespace>
+  </dc-schema>
+
+  <dc-type>
+    <schema>thesis</schema>
+    <element>degree</element>
+    <qualifier>name</qualifier>
+    <scope_note>ETD-MS native element; corresponds to TDL MODS &lt;mods:extension&gt;&lt;etd:degree&gt;... element</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>thesis</schema>
+    <element>degree</element>
+    <qualifier>level</qualifier>
+    <scope_note>ETD-MS native element; corresponds to TDL MODS  &lt;mods:extension&gt;&lt;etd:degree&gt;... element</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>thesis</schema>
+    <element>degree</element>
+    <qualifier>discipline</qualifier>
+    <scope_note>ETD-MS native element; corresponds to TDL MODS &lt;mods:extension&gt;&lt;etd:degree&gt;... element</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>thesis</schema>
+    <element>degree</element>
+    <qualifier>grantor</qualifier>
+    <scope_note>ETD-MS native element; corresponds to TDL MODS &lt;mods:name&gt;... element</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>thesis</schema>
+    <element>degree</element>
+    <qualifier>department</qualifier>
+    <scope_note>Mapped to ETD-MS degree.grantor; corresponds to TDL MODS &lt;mods:name&gt;... element</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>dc</schema>
+    <element>contributor</element>
+    <qualifier>committeeMember</qualifier>
+    <scope_note>Mapped to ETD-MS contributor; corresponds to TDL MODS &lt;mods:name&gt;... element</scope_note>
+  </dc-type>
+
+  <!-- Custom UIUC "thesis" metadata fields to store student Program information, along with various Degree codes. -->
+  <dc-type>
+    <schema>thesis</schema>
+    <element>degree</element>
+    <qualifier>program</qualifier>
+    <scope_note>Custom UIUC element; corresponds to Student Program Name</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>thesis</schema>
+    <element>degree</element>
+    <qualifier>programCode</qualifier>
+    <scope_note>Custom UIUC element; corresponds to Student Program Code</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>thesis</schema>
+    <element>degree</element>
+    <qualifier>disciplineCode</qualifier>
+    <scope_note>Custom UIUC element; corresponds to Student Major/Discipline Code</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>thesis</schema>
+    <element>degree</element>
+    <qualifier>departmentCode</qualifier>
+    <scope_note>Custom UIUC element; corresponds to Student Department Code</scope_note>
+  </dc-type>
+  
 </dspace-dc-types>
