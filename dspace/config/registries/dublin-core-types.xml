@@ -689,5 +689,5 @@
     <qualifier>departmentCode</qualifier>
     <scope_note>Custom UIUC element; corresponds to Student Department Code</scope_note>
   </dc-type>
-  
+
 </dspace-dc-types>
