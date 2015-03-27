@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+    <map:components>
+        <!--<map:actions>-->
+            <!--<map:action name="SaveRequestForAuthentication"-->
+                        <!--src="edu.uiuc.dspace.app.xmlui.aspect.ideals.SaveRequestForAuthentication"/>-->
+        <!--</map:actions>-->
+
+        <!--<map:transformers>-->
+            <!--<map:transformer name="PeriodicalBrowse" src="edu.uiuc.dspace.periodical.PeriodicalBrowse"/>-->
+        <!--</map:transformers>-->
+    </map:components>
+
+    <map:pipelines>
+        <map:pipeline>
+            <map:generate/>
+
+            <!-- Mark collections for which periodical browsing is available -->
+            <!--<map:match pattern="handle/*/**">-->
+                <!--<map:transform type="PeriodicalBrowse"/>-->
+            <!--</map:match>-->
+
+            <!-- General Structural Modifications for IDEALS Themes -->
+            <map:transform src="xslt/modify-ideals.xsl"/>
+
+            <!-- Suppress information on Index page in DRI -->
+            <map:match pattern="">
+                <map:transform src="xslt/index-suppress.xsl"/>
+            </map:match>
+
+            <!-- Configure the 'Browse By' box that appears on Collections & Community pages -->
+            <map:match pattern="handle/*/**">
+                <map:transform src="xslt/configure-browse-box.xsl"/>
+            </map:match>
+
+            <!-- Suppress information on Collection Admin pages -->
+            <map:match pattern="admin/**">
+                <map:transform src="xslt/admin.xsl"/>
+            </map:match>
+
+            <!-- Save a request so it can be redirected to after login -->
+            <!--<map:match type="regexp" pattern="(handle/.*|community-list|search|simple-search|advanced-search|browse)">-->
+                <!--<map:act type="SaveRequestForAuthentication"/>-->
+            <!--</map:match>-->
+
+            <map:serialize type="xml"/>
+        </map:pipeline>
+    </map:pipelines>
+</map:sitemap>
