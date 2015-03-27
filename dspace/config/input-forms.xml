@@ -14,7 +14,7 @@
  <!-- the mapping for handle "default".                                    -->
 
  <form-map>
-   <name-map collection-handle="default" form-name="traditional" />
+   <name-map collection-handle="default" form-name="UIUC" />
  </form-map>
 
 
@@ -216,7 +216,329 @@ it, please enter the types and the actual numbers or codes.</hint>
        </field>
       </page>
     </form>
- </form-definitions>
+
+    <!--							  -->
+    <!-- 	START CUSTOM UIUC FORM!   -->
+    <!--							  -->
+    <form name="UIUC">
+      <page number="1">
+
+	<!--Title-->
+	<field>
+          <dc-schema>dc</dc-schema>
+	  <dc-element>title</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Title(s)</label>
+          <input-type>onebox</input-type>
+          <hint></hint>
+          <required>You must enter a main title for this item.</required>
+	</field>
+
+	<!--Date of Publication-->
+	<field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>date</dc-element>
+          <dc-qualifier>issued</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Date of Publication or Distribution</label>
+          <input-type>date</input-type>
+          <hint></hint>
+          <required>You must enter at least the year.</required>
+	</field>
+
+    <!--Type of Resource-->
+    <field>
+      <dc-schema>dc</dc-schema>
+      <dc-element>type</dc-element>
+      <dc-qualifier></dc-qualifier>
+      <repeatable>true</repeatable>
+      <label>Type of Resource</label>
+      <input-type value-pairs-name="common_types">list</input-type>
+      <hint></hint>
+      <required>You must select at least one type for this item.</required>
+    </field>
+	<!--Subject Keywords-->
+	<field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>subject</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <!-- An input-type of twobox MUST be marked as repeatable -->
+          <repeatable>true</repeatable>
+          <label>Subject Keywords</label>
+          <input-type>twobox</input-type>
+          <hint>Please enter at least one term. To enter multiple terms, use the "add more" button or separate them with semicolons (;).</hint>
+          <required>At least one subject keyword is required.</required>
+          <delimiters>;</delimiters>
+	</field>
+
+    <!--Authors-->
+    <field>
+      <dc-schema>dc</dc-schema>
+      <dc-element>creator</dc-element>
+      <dc-qualifier></dc-qualifier>
+      <repeatable>true</repeatable>
+      <label>Author(s) or Creator(s)</label>
+      <input-type>onebox</input-type>
+      <hint>Please format as: LastName, FirstName MiddleName, Suffix (e.g. Smith, John L., Jr.). To enter multiple authors, use the "add more" button or separate them with semicolons (;).</hint>
+      <required></required>
+    </field>
+
+	<!--Additional Contributors-->
+	<field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>contributor</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Contributor(s) (e.g. editors, illustrators)</label>
+          <input-type>onebox</input-type>
+          <hint>Please format as: LastName, FirstName MiddleName, Suffix (e.g. Smith, John L., Jr.). To enter multiple authors, use the "add more" button or separate them with semicolons (;).</hint>
+          <required></required>
+	</field>
+    <!--Abstract-->
+    <field>
+      <dc-schema>dc</dc-schema>
+      <dc-element>description</dc-element>
+      <dc-qualifier>abstract</dc-qualifier>
+      <repeatable>false</repeatable>
+      <label>Abstract or Summary</label>
+      <input-type>textarea</input-type>
+      <hint></hint>
+      <required></required>
+    </field>
+
+    <!--Geographic Coverage-->
+    <field>
+      <dc-schema>dc</dc-schema>
+      <dc-element>coverage</dc-element>
+      <dc-qualifier>spatial</dc-qualifier>
+      <repeatable>true</repeatable>
+      <label>Geographic Coverage</label>
+      <input-type>onebox</input-type>
+      <hint>If the item is about or covers a specific geographic area, please list the area here.</hint>
+      <required></required>
+    </field>
+
+          <!--Genre of Resource-->
+	<field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>type</dc-element>
+          <dc-qualifier>genre</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Genre of Resource</label>
+          <input-type value-pairs-name="common_genres">list</input-type>
+          <hint></hint>
+          <required></required>
+	</field>       
+
+	<!--Language-->
+	<field>
+          <dc-schema>dc</dc-schema>
+	  <dc-element>language</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Primary Language of Resource</label>
+          <input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+          <hint></hint>
+          <required></required>
+	</field>
+
+
+
+
+    <!--Citation Information-->
+    <field>
+      <dc-schema>dc</dc-schema>
+      <dc-element>identifier</dc-element>
+      <dc-qualifier>bibliographicCitation</dc-qualifier>
+      <repeatable>false</repeatable>
+      <label>Complete Citation for this Item</label>
+      <input-type>textarea</input-type>
+      <hint>Enter the information you would want someone to use to cite this item. Include important information such as the journal name, volume, issue, and page numbers for a journal article or the name and date of the conference for a conference paper.</hint>
+      <required></required>
+    </field>
+
+    <!--Publisher-->
+    <field>
+      <dc-schema>dc</dc-schema>
+      <dc-element>publisher</dc-element>
+      <dc-qualifier></dc-qualifier>
+      <repeatable>false</repeatable>
+      <label>Publisher</label>
+      <input-type>onebox</input-type>
+      <hint></hint>
+      <required></required>
+    </field>
+
+    <!--Series-->
+    <field>
+      <dc-schema>dc</dc-schema>
+      <dc-element>relation</dc-element>
+      <dc-qualifier>ispartof</dc-qualifier>
+      <repeatable>true</repeatable>
+      <label>Series Name/Report no.</label>
+      <input-type>onebox</input-type>
+      <hint>(e.g. "Blackwell Philosophy Anthologies, no. 4" or "FERIC special report, no. SR-121")</hint>
+      <required></required>
+    </field>
+
+    <!--Sponsors-->
+    <field>
+      <dc-schema>dc</dc-schema>
+      <dc-element>description</dc-element>
+      <dc-qualifier>sponsorship</dc-qualifier>
+      <repeatable>true</repeatable>
+      <label>Sponsor(s)/Grant no.</label>
+      <input-type>onebox</input-type>
+      <hint>Please enter the funding or granting agency (and grant number), if any.</hint>
+      <required></required>
+    </field>
+
+    <!--Copyright Statement-->
+    <field>
+      <dc-schema>dc</dc-schema>
+      <dc-element>rights</dc-element>
+      <dc-qualifier></dc-qualifier>
+      <repeatable>true</repeatable>
+      <label>Copyright Statement</label>
+      <input-type>onebox</input-type>
+      <hint>In addition to the stating the copyright holder, you can also add additional information such as whether the item is licensed under a Creative Commons license.</hint>
+      <required></required>
+    </field>
+
+
+          <!--Identifiers-->
+	<field>
+          <dc-schema>dc</dc-schema>
+	  <dc-element>identifier</dc-element>
+          <dc-qualifier></dc-qualifier>
+          <!-- An input-type of qualdrop_value MUST be marked as repeatable -->
+          <repeatable>true</repeatable>
+          <label>Identifiers</label>
+          <input-type value-pairs-name="common_identifiers">qualdrop_value</input-type>
+          <hint>Please enter the DOI, ISSN, or other identifiers if available.</hint>
+          <required></required>
+	</field>
+
+
+
+
+
+	
+
+    <!-- Thesis schema fields -->
+    <!-- Degree Name -->
+    <field>
+      <dc-schema>thesis</dc-schema>
+      <dc-element>degree</dc-element>
+      <dc-qualifier>name</dc-qualifier>
+      <repeatable>false</repeatable>
+      <label>Choose the appropriate degree</label>
+        <input-type value-pairs-name="degree_names">dropdown</input-type>
+      <hint>If this is a dissertation or thesis, list the degree name.</hint>
+      <required></required>
+    </field>
+
+    <!-- level (Dissertation/thesis)-->
+    <field>
+      <dc-schema>thesis</dc-schema>
+      <dc-element>degree</dc-element>
+      <dc-qualifier>level</dc-qualifier>
+      <repeatable>false</repeatable>
+      <label>Dissertation or Thesis</label>
+        <input-type value-pairs-name="dissertation_thesis">dropdown</input-type>
+      <hint>If this is a dissertation or thesis, list the degree level.</hint>
+      <required></required>
+    </field>
+
+      <!-- Thesis Committee Chair -->
+      <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>contributor</dc-element>
+          <dc-qualifier>committeeChair</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Dissertation Chair</label>
+          <input-type>onebox</input-type>
+          <hint>If this is a dissertation, please list the committee chair.</hint>
+          <required></required>
+      </field>
+
+      <!-- Thesis Advisor -->
+      <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>contributor</dc-element>
+          <dc-qualifier>advisor</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Dissertation Director of Research or Thesis Advisor</label>
+          <input-type>onebox</input-type>
+          <hint>If this is a dissertation, please list the director of research; if this is a thesis, please list the advisor(s).</hint>
+          <required></required>
+      </field>
+
+      <!-- Committee Members -->
+      <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>contributor</dc-element>
+          <dc-qualifier>committeeMember</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Dissertation Committee Member</label>
+          <input-type>onebox</input-type>
+          <hint>If this is a dissertation, please list the committee members.</hint>
+          <required></required>
+      </field>
+
+    <!-- grantor -->
+    <field>
+      <dc-schema>thesis</dc-schema>
+      <dc-element>degree</dc-element>
+      <dc-qualifier>grantor</dc-qualifier>
+      <repeatable>false</repeatable>
+      <label>Degree Granting Institution</label>
+      <input-type>onebox</input-type>
+      <hint>If this is a dissertation or thesis, list the granting institutions.</hint>
+      <required></required>
+    </field>
+
+      <!-- discipline -->
+      <field>
+          <dc-schema>thesis</dc-schema>
+          <dc-element>degree</dc-element>
+          <dc-qualifier>discipline</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Dissertation/Thesis Degree discipline</label>
+          <input-type>onebox</input-type>
+          <hint>If this is a dissertation or thesis, list the degree discipline.</hint>
+          <required></required>
+      </field>
+
+      <!-- department -->
+      <field>
+          <dc-schema>thesis</dc-schema>
+          <dc-element>degree</dc-element>
+          <dc-qualifier>department</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Dissertation/Thesis Degree department</label>
+          <input-type>onebox</input-type>
+          <hint>If this is a dissertation or thesis, list the granting department.</hint>
+          <required></required>
+      </field>
+
+      <!-- program -->
+      <field>
+          <dc-schema>thesis</dc-schema>
+          <dc-element>degree</dc-element>
+          <dc-qualifier>program</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Dissertation/Thesis Degree Program</label>
+          <input-type>onebox</input-type>
+          <hint>If this is a dissertation or thesis, please list the associated program, if any.</hint>
+          <required></required>
+      </field>
+	
+      </page>
+
+    </form>
+  </form-definitions>
 
 
  <!-- form-value-pairs populate dropdown and qualdrop-value lists.          -->
@@ -401,6 +723,92 @@ it, please enter the types and the actual numbers or codes.</hint>
      </pair>
    </value-pairs>
 
- </form-value-pairs>
+ <value-pairs value-pairs-name="dissertation_thesis" dc-term="degree_level">
+          <pair>
+              <displayed-value>N/A</displayed-value>
+              <stored-value></stored-value>
+          </pair>
+          <pair>
+              <displayed-value>Dissertation (Doctoral level only)</displayed-value>
+              <stored-value>dissertation</stored-value>
+          </pair>
+          <pair>
+              <displayed-value>Thesis (Bachelor's or Master's level)</displayed-value>
+              <stored-value>thesis</stored-value>
+          </pair>
+      </value-pairs>
+
+      <value-pairs value-pairs-name="degree_names" dc-term="degree_name">
+          <pair>
+              <displayed-value>N/A</displayed-value>
+              <stored-value></stored-value>
+          </pair>
+          <pair>
+              <displayed-value>B.A. (bachelor's)</displayed-value>
+              <stored-value>B.A. (bachelor's)</stored-value>
+          </pair>
+          <pair>
+              <displayed-value>B.S. (bachelor's)</displayed-value>
+              <stored-value>B.S. (bachelor's)</stored-value>
+          </pair>
+          <pair>
+              <displayed-value>M.A. (master's)</displayed-value>
+              <stored-value>M.A. (master's)</stored-value>
+          </pair>
+          <pair>
+              <displayed-value>M.Arch. (master's)</displayed-value>
+              <stored-value>M.Arch. (master's)</stored-value>
+          </pair>
+          <pair>
+              <displayed-value>M.F.A. (master's)</displayed-value>
+              <stored-value>M.F.A. (master's)</stored-value>
+          </pair>
+          <pair>
+              <displayed-value>M.H.R.I.R. (master's)</displayed-value>
+              <stored-value>M.H.R.I.R. (master's)</stored-value>
+          </pair>
+          <pair>
+              <displayed-value>M.L.A. (master's)</displayed-value>
+              <stored-value>M.L.A. (master's)</stored-value>
+          </pair>
+          <pair>
+              <displayed-value>M.Mus. (master's) </displayed-value>
+              <stored-value>M.Mus. (master's) </stored-value>
+          </pair>
+          <pair>
+              <displayed-value>M.S. (master's) </displayed-value>
+              <stored-value>M.S. (master's) </stored-value>
+          </pair>
+          <pair>
+              <displayed-value>M.S.P.H. (master's) </displayed-value>
+              <stored-value>M.S.P.H. (master's) </stored-value>
+          </pair>
+          <pair>
+              <displayed-value>M.U.P. (master's)</displayed-value>
+              <stored-value>M.U.P. (master's)</stored-value>
+          </pair>
+          <pair>
+              <displayed-value>A.Mus.D. (doctoral) </displayed-value>
+              <stored-value>A.Mus.D. (doctoral) </stored-value>
+          </pair>
+          <pair>
+              <displayed-value>Au.D. (doctoral) </displayed-value>
+              <stored-value>Au.D. (doctoral) </stored-value>
+          </pair>
+          <pair>
+              <displayed-value>Ed.D. (doctoral) </displayed-value>
+              <stored-value>Ed.D. (doctoral) </stored-value>
+          </pair>
+          <pair>
+              <displayed-value>J.S.D. (doctoral) </displayed-value>
+              <stored-value>J.S.D. (doctoral) </stored-value>
+          </pair>
+          <pair>
+              <displayed-value>Ph.D. (doctoral)</displayed-value>
+              <stored-value>Ph.D. (doctoral)</stored-value>
+          </pair>
+      </value-pairs>
+
+  </form-value-pairs>
 
 </input-forms>

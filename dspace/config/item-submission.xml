@@ -17,7 +17,7 @@
  <!-- which does not appear in this map will be associated with the mapping-->
  <!-- for handle "default".                                                -->
  <submission-map>
-   <name-map collection-handle="default" submission-name="traditional" />
+   <name-map collection-handle="default" submission-name="UIUC" />
  </submission-map>
 
 
@@ -270,6 +270,78 @@
 
 
      
+   </submission-process>
+
+ <!--This "UIUC" process defines the DEFAULT item submission process for UIUC-->
+   <submission-process name="UIUC">
+
+     <!--Step 1 will be to Sign off on the License -->
+      <step>
+        <heading>submit.progressbar.license</heading>
+        <processing-class>org.dspace.submit.step.LicenseStep</processing-class>
+        <xmlui-binding>org.dspace.app.xmlui.aspect.submission.submit.LicenseStep</xmlui-binding>
+		<workflow-editable>false</workflow-editable>
+      </step>
+
+     <!--Step 2 will be to do initialize item (and skip the normal initial questions)-->
+	<step>
+		<processing-class>org.dspace.submit.step.SkipInitialQuestionsStep</processing-class>
+	</step>
+
+       <!--Step 3 will be to Manage Item access. -->
+       <step>
+           <heading>submit.progressbar.access</heading>
+           <processing-class>org.dspace.submit.step.AccessStep</processing-class>
+           <xmlui-binding>org.dspace.app.xmlui.aspect.submission.submit.AccessStep</xmlui-binding>
+           <workflow-editable>true</workflow-editable>
+       </step>
+ 
+     <!--Step 3 will be to choose Access Restrictions
+     <step>
+       <heading>submit.progressbar.restrict_access</heading>
+       <processing-class>edu.uiuc.dspace.submit.step.RestrictAccessStepProc</processing-class>
+       <xmlui-binding>edu.uiuc.dspace.app.xmlui.aspect.restrict.RestrictAccessStep</xmlui-binding>
+       <workflow-editable>true</workflow-editable>
+     </step>
+     -->
+
+     <!--Step 4 will be to Describe the item.-->
+      <step>
+        <heading>submit.progressbar.describe</heading>
+        <processing-class>org.dspace.submit.step.DescribeStep</processing-class>
+        <jspui-binding>org.dspace.app.webui.submit.step.JSPDescribeStep</jspui-binding>
+		<xmlui-binding>org.dspace.app.xmlui.aspect.submission.submit.DescribeStep</xmlui-binding>
+        <workflow-editable>true</workflow-editable>
+      </step>
+
+     <!--Step 5 will be to Upload the item
+     <step>
+        <heading>submit.progressbar.upload</heading>
+        <processing-class>org.dspace.submit.step.UploadStep</processing-class>
+        <jspui-binding>org.dspace.app.webui.submit.step.JSPUploadStep</jspui-binding>
+		<xmlui-binding>org.dspace.app.xmlui.aspect.submission.submit.UploadStep</xmlui-binding>
+        <workflow-editable>true</workflow-editable>
+      </step>
+        -->
+
+       <!-- Step 4 Upload Item with Embargo Features (not supported in JSPUI)
+            to enable this step, please make sure to comment-out the previous step "UploadStep"-->
+       <step>
+           <heading>submit.progressbar.upload</heading>
+           <processing-class>org.dspace.submit.step.UploadWithEmbargoStep</processing-class>
+           <xmlui-binding>org.dspace.app.xmlui.aspect.submission.submit.UploadWithEmbargoStep</xmlui-binding>
+           <workflow-editable>true</workflow-editable>
+       </step>
+
+     <!--Step 6 will be to Verify everything -->
+ 	  <step>
+        <heading>submit.progressbar.verify</heading>
+        <processing-class>org.dspace.submit.step.VerifyStep</processing-class>
+ 	    <jspui-binding>org.dspace.app.webui.submit.step.JSPVerifyStep</jspui-binding>
+		<xmlui-binding>org.dspace.app.xmlui.aspect.submission.submit.ReviewStep</xmlui-binding>
+		<workflow-editable>true</workflow-editable>
+      </step>
+
    </submission-process>
 
  </submission-definitions>
