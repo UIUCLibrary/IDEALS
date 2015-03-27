@@ -1,0 +1,76 @@
+
+/**
+* Style rules for submission workflow (excluding describe step which is styled in submit-form.css)
+*
+*
+**/
+
+#aspect_submission_StepTransformer_list_submit-upload-new li{
+    margin-bottom: 10px;
+}
+#aspect_submission_StepTransformer_list_submit-upload-new .hidden_submit {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+#aspect_submission_StepTransformer_div_submit-upload #aspect_submission_StepTransformer_list_submit-upload-new
+{
+    /*width:50%;*/
+}
+#aspect_submission_StepTransformer_list_submit-upload-new.ds-form-list input
+{
+    /*clear:none;*/
+    /*position:relative;*/
+
+}
+[id^="aspect_submission_StepTransformer_field_groups_"]
+{
+    width: 100%;
+}
+
+#restriction-date
+{
+    width: 100%;
+}
+
+#restriction-reason
+{
+    width: 100%;
+}
+/*TODO change names to lower case dashed style*/
+#aspect_submission_StepTransformer_field_format
+{
+    width:20%;
+}
+
+div.radio#limited_radio
+{
+    float:left;
+    margin-top:inherit;
+}
+
+div.checkbox#limited_checkbox
+{
+    float:right;
+    margin-top:inherit;
+}
+
+div#limited_group
+{
+    width:75%;
+    min-height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    margin-top:-2px;
+
+}
+
+#aspect_submission_StepTransformer_list_default-restrict, #aspect_submission_StepTransformer_list_file-restriction
+{
+    margin-left:30px;
+}
+
+#aspect_submission_StepTransformer_field_embargo_until_date{
+    width: 118px;
+}
