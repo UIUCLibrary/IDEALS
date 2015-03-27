@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <document xmlns="http://di.tamu.edu/DRI/1.0/" xmlns:i18n="http://apache.org/cocoon/i18n/2.1" version="1.1">
-<body>
-<div id="file.news.div.news" n="news" rend="primary">
-<head>DSpace Repository</head>
-<p>DSpace is a digital service that collects, preserves, and distributes digital material. Repositories are important tools for preserving an organization&apos;s legacy; they facilitate digital preservation and scholarly communication.</p>
-</div>
-</body>
-<options/>
-<meta>
-<userMeta/>
-<pageMeta/>
-<repositoryMeta/>
-</meta>
+    <body>
+        <div id="file.news.div.news" n="news" rend="primary">
+            <head>Welcome to IDEALS</head>
+
+            <div id="ds-home" rend="secondary">
+                <!--====IDEALS WILL BE UNAVAILABLE MESSAGE===-->
+                <!--
+                        <p rend="warning">IDEALS will be unavailable on Wednesday 5 September at 6:30 AM local time
+                    while we perform a system upgrade. The system will be down for about an hour.
+                    Feel free to <xref target="mailto:ideals-gen@illinois.edu">contact us</xref> if you have any questions.</p>
+                -->
+
+                <i18n:text>ideals.intro.para1</i18n:text>
+            </div>
+
+        </div>
+    </body>
+    <options/>
+    <meta>
+        <userMeta/>
+        <pageMeta/>
+        <repositoryMeta/>
+    </meta>
 </document>
