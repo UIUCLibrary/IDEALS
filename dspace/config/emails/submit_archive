@@ -4,18 +4,26 @@
 # {1}  Name of collection
 # {2}  handle 
 #
-Subject: DSpace: Submission Approved and Archived 
+Subject: IDEALS: Submission Approved and Archived 
 
 You submitted: {0}
 
 To collection: {1}
 
-Your submission has been accepted and archived in DSpace,
-and it has been assigned the following identifier:
+Your submission has been accepted and archived in IDEALS
+(https://www.ideals.illinois.edu/), and it has been assigned the
+following unique identifier:
 {2}
 
 Please use this identifier when citing your submission.
 
-Many thanks!
+Thanks for submitting to IDEALS!
 
-DSpace
+The IDEALS Team
+
+===========================================
+For more information on IDEALS, visit us at
+https://www.ideals.illinois.edu/
+or e-mail us at
+ideals-gen@illinois.edu
+===========================================

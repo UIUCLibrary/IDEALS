@@ -7,7 +7,7 @@
 # {4}  Task result
 # {5}  Workflow action taken
 #
-Subject: DSpace: Curation Task Report
+Subject: IDEALS: Curation Task Report
 
 Title:         {0}
 Collection:    {1}
@@ -20,4 +20,13 @@ with the following result:
 
 Action taken on the submission: {5}
 
-DSpace
+Many thanks!
+
+The IDEALS Team
+
+===========================================
+For more information on IDEALS, visit us at
+https://www.ideals.illinois.edu/
+or e-mail us at
+ideals-gen@illinois.edu
+===========================================

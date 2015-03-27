@@ -1,0 +1,41 @@
+# User Requested Access Restrictions email message
+#
+# {0}  Submitter's name & email
+# {1}  Handle/Identifier of item
+# {2}  Group item will be restricted to
+# {3}  Release Date of item under embargo
+# {4}  Reason provided by user
+#
+Subject: IDEALS: Item Access Restrictions Requested
+
+An IDEALS user has requested that the following Access
+Restriction be placed on a newly submitted item.
+
+Submitter: {0}
+
+Item: {1}
+
+Access Restriction Information
+   Restricted to Group: {2}
+   Release Date: {3}
+
+User-Provided Reason for Restriction:
+{4}
+
+----------------------------------------------------------
+Administrative Notes:
+
+  (1) If the "Restricted to Group" specified above is the
+      "Administrator" group, then the submitter will need 
+      to be contacted regarding which group he/she wishes 
+      to restrict to. In all other cases, no action should 
+      be necessary!
+      
+  (2) Items under EMBARGO appear with a "Release Date"
+      specified above.  If no "Restricted to Group" is
+      specified, then these items will NOT be browseable
+      or searchable until after the release date.  However,
+      IDEALS Administrators can edit these items from the 
+      Administration "Edit Item" interface, as necessary.
+----------------------------------------------------------
+

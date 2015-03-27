@@ -1,0 +1,14 @@
+# Item released from Embargo email message
+#
+# {0}  List of item Handles which were released
+#      from embargo
+#
+Subject: IDEALS: Items Released from Embargo
+
+The embargo period for the following items
+has expired.  They were released overnight
+and are now publicly accessible within IDEALS.
+
+Released Items:
+{0}
+

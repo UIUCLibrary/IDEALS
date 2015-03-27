@@ -4,9 +4,23 @@
 # Parameters: {0} is the details of the new collections and items
 # See org.dspace.core.Email for information on the format of this file.
 #
-Subject: DSpace Subscription
-New items are available in the collections you have subscribed to:
+Subject: IDEALS Subscription
+New or updated items are available in the IDEALS collections you have 
+subscribed to:
 
 {0}
 
-DSpace
+If you wish to unsubscribe (and no longer receive these e-mails), 
+you can do so from your "My IDEALS" page whenever you next login 
+to IDEALS (https://www.ideals.illinois.edu/).
+
+Many thanks!
+
+The IDEALS Team
+
+===========================================
+For more information on IDEALS, visit us at
+https://www.ideals.illinois.edu/
+or e-mail us at
+ideals-gen@illinois.edu
+===========================================

@@ -10,9 +10,9 @@
 #             {7} sender message 
 # See org.dspace.core.Email for information on the format of this file.
 #
-Subject: An item of interest from DSpace
+Subject: An item of interest from IDEALS
 
-Hello {0}:
+Hello {0},
 
 {1} requested we send you this email regarding an item available in {2}.
 
@@ -21,6 +21,16 @@ Location: {5}
 In Collection: {6}
 Personal Message: {7}
 
-The DSpace digital repository system captures, stores, indexes, preserves, and distributes digital material.
-For more information, visit www.dspace.org
+Personal Message: 
+{7}
+
+The Illinois Digital Environment for Access to Learning and Scholarship (IDEALS) disseminates, preserves, and provides persistent and reliable access to the research and scholarship of faculty, staff, and students on the University of Illinois at Urbana-Champaign campus.
+
+===========================================
+For more information on IDEALS, visit us at
+https://www.ideals.illinois.edu/
+or e-mail us at
+ideals-gen@illinois.edu
+===========================================
+
 
