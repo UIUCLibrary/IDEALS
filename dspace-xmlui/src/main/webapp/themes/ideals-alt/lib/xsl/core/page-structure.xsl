@@ -324,7 +324,7 @@
         <xsl:variable name="request_subhandle" select="substring-after($request_handle, '2142/')"/>
 
         <!--header for small devices-->
-        <div id="ds-header-sm" class="visible-xs" role="banner">
+        <div id="ds-header-sm" class="visible-xs container" role="banner">
 
             <!--IDEALS Home link-->
             <div id="header-logo">
@@ -343,20 +343,12 @@
                         </xsl:choose>
                     </xsl:attribute>
 
-
-                    <img id="ds-header-logo-sm" src="{$theme-path}/images/IDEALS_logo_tablet.png" alt="IDEALS Logo"/>
-
-                    <!--<img class="ds-header-campus-image" src="{$theme-path}/images/alma_scaled120x80.png"-->
-                    <!--alt="The Alma Mater" title="The Alma Mater"/>-->
-                    <!--<img class="ds-header-campus-image" src="{$theme-path}/images/barn_scaled53X80.png" alt="Round Barn"-->
-                    <!--title="Round Barn"/>-->
-                    <!--<img class="ds-header-campus-image" src="{$theme-path}/images/Grainger_scaled120x80.png"-->
-                    <!--alt="Grainger Engineering Library" title="Grainger Engineering Library"/>-->
+                    <img id="ds-header-logo-sm" src="{$theme-path}/images/IDEALS_logo_tablet_copy.png" alt="IDEALS Logo"/>
                 </a>
             </div>
 
 
-
+            <!-- User links - login button, menu and search form for mobile viewport -->
             <div id="user-links">
                 <div id="ds-user-login-sm">
                     <xsl:choose>
@@ -381,7 +373,6 @@
                                     <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/dri:metadata[@element='identifier' and @qualifier='loginURL']"/>
                                 </xsl:attribute>
                                 <span class="glyphicon glyphicon-user"></span>
-
                                 <!--<i18n:text>xmlui.dri2xhtml.structural.login</i18n:text>-->
                             </a>
                         </xsl:otherwise>
@@ -396,10 +387,10 @@
                     </button>
                 </div>
 
-
+                <!-- Search form with dropdown menu.
+                Search scopes with radio button is included with the main div "ideals-search-scope" -->
                 <div id="search-space-sm">
-
-                    <form accept-charset="UTF-8" action="/search" class="form-inline" id="top_search_form_sm" method="post">
+                    <form id="top_search_form_sm" accept-charset="UTF-8" action="/search" class="form-inline" method="post">
                         <xsl:attribute name="action">
                             <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='simpleURL']"/>
                         </xsl:attribute>
@@ -407,7 +398,7 @@
                             <label class="sr-only" for="input-search-sm">
                                 <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='queryField']"/>
                             </label>
-                            <input class="form-control input-sm" type="text" id="input-search-sm">
+                            <input id="input-search-sm" class="form-control input-sm" type="text">
                                 <xsl:attribute name="name">
                                     <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='queryField']"/>
                                 </xsl:attribute>
@@ -422,7 +413,7 @@
                                 </button>
 
                                 <ul class="dropdown-menu pull-right" role="menu">
-                                    <li>
+                                    <li class="dropdown">
                                         <input class="btn btn-sm btn-default btn-block" name="submit" type="submit" i18n:attr="value" value="xmlui.general.go">
                                             <xsl:attribute name="onclick">
                                     <xsl:text>
@@ -456,66 +447,11 @@
                     </form>
                 </div>
             </div>
-
-
-            <!-- customized div to produce radio buttons and 'advanced search'
-            link found underneath search box -->
-
-            <div id="ideals-search-scope-sm">
-                <!-- Determine possible search scopes for main search box -->
-                <xsl:choose>
-                    <xsl:when test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='focus'][@qualifier='container']">
-                        <!-- Search IDEALS -->
-                        <label class="radio-inline" for="ds-search-form-scope-all">
-                            <i18n:text>xmlui.dri2xhtml.structural.search</i18n:text>
-                            <input id="ds-search-form-scope-all-sm" type="radio" name="scope" value="">
-                                <xsl:attribute name="checked">
-                                    <xsl:choose>
-                                        <xsl:when test="$com='34610'">
-                                            <xsl:text></xsl:text>
-                                        </xsl:when>
-                                        <xsl:otherwise>
-                                            <xsl:text>checked</xsl:text>
-                                        </xsl:otherwise>
-                                    </xsl:choose>
-                                </xsl:attribute>
-                            </input>
-                        </label>
-
-                        <!-- Search This Community/Collection -->
-                        <label class="radio-inline" for="ds-search-form-scope-container-sm">
-                            <xsl:choose>
-                                <xsl:when test="/dri:document/dri:body//dri:div/dri:referenceSet[@type='detailView' and @n='community-view']">
-                                    <a>  <i18n:text>xmlui.dri2xhtml.structural.search-in-community</i18n:text> </a>
-                                </xsl:when>
-                                <xsl:otherwise>
-                                    <i18n:text>xmlui.dri2xhtml.structural.search-in-collection</i18n:text>
-                                </xsl:otherwise>
-                            </xsl:choose>
-                            <input id="ds-search-form-scope-container-sm" type="radio" name="scope">
-                                <xsl:attribute name="value">
-                                    <xsl:value-of select="substring-after(/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='focus'][@qualifier='container'],':')"/>
-                                </xsl:attribute>
-                                <xsl:attribute name="checked">
-                                    <xsl:choose>
-                                        <xsl:when test="$com='34610'">
-                                            <xsl:text>checked</xsl:text>
-                                        </xsl:when>
-                                        <xsl:otherwise>
-                                            <xsl:text></xsl:text>
-                                        </xsl:otherwise>
-                                    </xsl:choose>
-                                </xsl:attribute>
-                            </input>
-                        </label>
-                    </xsl:when>
-                </xsl:choose>
-            </div>
         </div>
 
 
         <!--hide the header on small devices-->
-        <div id="ds-header-wrapper" class="hidden-xs">
+        <div id="ds-header-wrapper" >
             <div id="ds-header" class="clearfix container" role="banner">
 
                 <xsl:attribute name="class">
@@ -536,8 +472,8 @@
                     </xsl:when>
                     <xsl:otherwise>
                         <div class="row">
-                            <div id="ds-image-group" class="col-sm-7 col-md-8 col-lg-8">
-                                <img id="ds-header-logo" src="{$theme-path}/images/IDEALS_logo_2x.png" alt="IDEALS Logo"
+                            <div id="ds-image-group" class="col-sm-7 col-md-8 col-lg-8 hidden-xs">
+                                <img id="ds-header-logo" src="{$theme-path}/images/IDEALS_logo_2x_copy.png" alt="IDEALS Logo"
                                      usemap="#logomap"/>
 
                                 <!--Image Map for IDEALS Logo-->
@@ -563,11 +499,13 @@
                                           alt="University of Illinois at Urbana-Champaign logo"/>
                                 </map>
 
-                                <div id="images" class="hidden-md hidden-sm">
+                                <div id="images-sm" class="hidden-sm">
                                     <img class="ds-header-campus-image" src="{$theme-path}/images/alma_scaled120x80.png"
                                          alt="The Alma Mater" title="The Alma Mater"/>
                                     <img class="ds-header-campus-image" src="{$theme-path}/images/barn_scaled53X80.png" alt="Round Barn"
                                          title="Round Barn"/>
+                                </div>
+                                <div id="images-md" class="hidden-md hidden-sm">
                                     <img class="ds-header-campus-image" src="{$theme-path}/images/Grainger_scaled120x80.png"
                                          alt="Grainger Engineering Library" title="Grainger Engineering Library"/>
                                 </div>
@@ -577,7 +515,7 @@
 
                             <!--Test Start-->
                             <div class="row">
-                                <div id="ds-user-links">
+                                <div id="ds-user-links" class="hidden-xs">
                                     <div id="search-place">
                                         <form accept-charset="UTF-8" action="/search" class="form-inline" id="top_search_form" method="post">
                                             <xsl:attribute name="action">
@@ -602,7 +540,7 @@
                                                         <span class="sr-only">Toggle Dropdown</span>
                                                     </button>
                                                     <ul class="dropdown-menu pull-right" role="menu">
-                                                        <li>
+                                                        <li class="dropdown">
                                                             <input class="btn btn-sm btn-default btn-block" name="submit" type="submit" i18n:attr="value" value="xmlui.general.go">
                                                                 <xsl:attribute name="onclick">
                                     <xsl:text>
@@ -667,10 +605,10 @@
                                         </xsl:choose>
                                     </div>
                                 </div>
+
                                 <!-- customized div to produce radio buttons and 'advanced search'
                                 link found underneath search box -->
-
-                                <div class="col-sm-4 col-md-4 col-lg-3" id="ideals-search-scope">
+                                <div class="col-xs-8 col-sm-4 col-md-4 col-lg-3" id="ideals-search-scope">
                                     <!-- Determine possible search scopes for main search box -->
                                     <xsl:choose>
                                         <xsl:when test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='focus'][@qualifier='container']">
@@ -695,7 +633,7 @@
                                             <label class="radio-inline" id="ideals_scope_container" for="ds-search-form-scope-container">
                                                 <xsl:choose>
                                                     <xsl:when test="/dri:document/dri:body//dri:div/dri:referenceSet[@type='detailView' and @n='community-view']">
-                                                        <a>  <i18n:text>xmlui.dri2xhtml.structural.search-in-community</i18n:text> </a>
+                                                        <i18n:text>xmlui.dri2xhtml.structural.search-in-community</i18n:text>
                                                     </xsl:when>
                                                     <xsl:otherwise>
                                                         <i18n:text>xmlui.dri2xhtml.structural.search-in-collection</i18n:text>
