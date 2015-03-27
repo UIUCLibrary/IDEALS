@@ -87,6 +87,18 @@
         <aspect name="E-Person" path="resource://aspects/EPerson/" />
         <aspect name="Submission and Workflow" path="resource://aspects/Submission/" />
 
+        <!-- ===============================
+             IDEALS Additions/Customizations
+             =============================== -->
+        <!-- ETD Search aspect for ETD-specific search, based upon the
+             "TexasDigitalLibrary" aspect. -->
+        <!--<aspect name="ETD Search" path="resource://aspects/ETDSearch/"/>-->
+
+        <!-- IDEALS Aspect performs some final restructuring of the
+             DRI document, in order to prepare for the IDEALS Theme.
+             (THIS ASPECT SHOULD ALWAYS BE LAST!) -->
+        <aspect name="IDEALS Aspect" path="resource://aspects/IDEALS/" />
+
         <!-- ========================
              Usage Statistics Engines
              ======================== -->
