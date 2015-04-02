@@ -46,3 +46,7 @@ FnArray.prototype.execute = function () {
 };
 
 var runAfterJSImports = new FnArray();
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})

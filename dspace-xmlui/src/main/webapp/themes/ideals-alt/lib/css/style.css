@@ -115,11 +115,7 @@ select.multiple {
 }
 
 #ds-header-wrapper {
-    /*background-color: #1F3F5E;*/
-    /* background-color: whitesmoke; */
-    /*color: white;*/
-    /*min-width: 950px;*/
-    /*padding-top: 36px;*/
+    background-color: #FFFFFF;
 }
 
 #ds-header {
@@ -171,6 +167,7 @@ img#ds-header-logo-sm {
 }
 
 #ds-header-sm {
+    background-color:#F5F8FA;
     text-align: center;
     padding-top: 15px;
 
@@ -2084,18 +2081,22 @@ form#aspect_submission_StepTransformer_div_submit-restrict fieldset.ds-radio-fie
 
 .panel-default>.panel-heading{
     color: white;
-    background-color: #f68a5f;
+    background-color: #587498;
     border-color: #ddd;
 }
 
 a.list-group-item:hover, li.list-group-item:hover{
     color:#ffffff;
-    background-color: #f68a5f;
+    background-color: #F3843E;
+}
+
+li.list-group-item>a:hover{
+    color:#ffffff;
 }
 
 .panel-primary>.panel-heading{
     color: #ffffff;
-    background-color: #607990;
+    background-color: #587498;
     border-color: #607990;
 }
 .input-sm{
@@ -2132,4 +2133,20 @@ a.list-group-item:hover, li.list-group-item:hover{
 
 div#ideals-search-scope.col-xs-8{
     margin-bottom:8px;
+}
+
+.btn-danger{
+    margin-left: 6px;
+}
+
+#ds-user-links{
+    margin-top: 15px;
+}
+
+.blue-tooltip + .tooltip > .tooltip-inner {
+    background-color: #336699;
+}
+.blue-tooltip + .tooltip > .tooltip-arrow {
+    border-top-color: #336699;
+    border-bottom-color:#336699;
 }

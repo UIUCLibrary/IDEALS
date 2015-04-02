@@ -343,7 +343,7 @@
                         </xsl:choose>
                     </xsl:attribute>
 
-                    <img id="ds-header-logo-sm" src="{$theme-path}/images/IDEALS_logo_tablet_copy.png" alt="IDEALS Logo"/>
+                    <img id="ds-header-logo-sm" src="{$theme-path}/images/IDEALS_logo_tablet.png" alt="IDEALS Logo"/>
                 </a>
             </div>
 
@@ -353,13 +353,14 @@
                 <div id="ds-user-login-sm">
                     <xsl:choose>
                         <xsl:when test="/dri:document/dri:meta/dri:userMeta/@authenticated = 'yes'">
-                            <a class="btn btn-sm btn-default">
+                            <a class="btn btn-sm btn-default blue-tooltip" data-toggle="tooltip" data-placement="top" title="My Profile">
                                 <xsl:attribute name="href">
                                     <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/dri:metadata[@element='identifier' and @qualifier='url']"/>
                                 </xsl:attribute>
-                                <i18n:text>xmlui.dri2xhtml.structural.profile</i18n:text>
+                                <span class="glyphicon glyphicon-user"></span>
+                                <!--<i18n:text>xmlui.dri2xhtml.structural.profile</i18n:text>-->
                             </a>
-                            <a class="btn btn-sm btn-danger">
+                            <a class="btn btn-sm btn-danger blue-tooltip" data-toggle="tooltip" data-placement="top" title="Logout">
                                 <xsl:attribute name="href">
                                     <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/dri:metadata[@element='identifier' and @qualifier='logoutURL']"/>
                                 </xsl:attribute>
@@ -368,11 +369,11 @@
                             </a>
                         </xsl:when>
                         <xsl:otherwise>
-                            <a class="btn btn-sm btn-default">
+                            <a class="btn btn-sm btn-default blue-tooltip" data-toggle="tooltip" data-placement="top" title="Log on">
                                 <xsl:attribute name="href">
                                     <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/dri:metadata[@element='identifier' and @qualifier='loginURL']"/>
                                 </xsl:attribute>
-                                <span class="glyphicon glyphicon-user"></span>
+                                <span class="glyphicon glyphicon-log-in"></span>
                                 <!--<i18n:text>xmlui.dri2xhtml.structural.login</i18n:text>-->
                             </a>
                         </xsl:otherwise>
@@ -473,7 +474,7 @@
                     <xsl:otherwise>
                         <div class="row">
                             <div id="ds-image-group" class="col-sm-7 col-md-8 col-lg-8 hidden-xs">
-                                <img id="ds-header-logo" src="{$theme-path}/images/IDEALS_logo_2x_copy.png" alt="IDEALS Logo"
+                                <img id="ds-header-logo" src="{$theme-path}/images/IDEALS_logo_2x.png" alt="IDEALS Logo"
                                      usemap="#logomap"/>
 
                                 <!--Image Map for IDEALS Logo-->
@@ -522,7 +523,7 @@
                                                 <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='simpleURL']"/>
                                             </xsl:attribute>
 
-                                            <div class="input-group col-sm-4 col-md-3 col-lg-3">
+                                            <div class="input-group col-sm-3 col-md-3 col-lg-3">
                                                 <label class="sr-only" for="input-search">
                                                     <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='queryField']"/>
                                                 </label>
@@ -578,20 +579,22 @@
                                     <div id="ds-user-login">
                                         <xsl:choose>
                                             <xsl:when test="/dri:document/dri:meta/dri:userMeta/@authenticated = 'yes'">
-                                                <a class="btn btn-sm btn-default">
+                                                <a class="btn btn-sm btn-default blue-tooltip" data-toggle="tooltip" data-placement="bottom" title="My Profile">
                                                     <xsl:attribute name="href">
                                                         <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/dri:metadata[@element='identifier' and @qualifier='url']"/>
                                                     </xsl:attribute>
-                                                    <i18n:text>xmlui.dri2xhtml.structural.profile</i18n:text>
+                                                    <span class="glyphicon glyphicon-user"></span>
+                                                    <!--<i18n:text>xmlui.dri2xhtml.structural.profile</i18n:text>-->
                                                     <!--<xsl:value-of select="/dri:document/dri:meta/dri:userMeta/dri:metadata[@element='identifier' and @qualifier='firstName']"/>-->
                                                     <!--<xsl:text> </xsl:text>-->
                                                     <!--<xsl:value-of select="/dri:document/dri:meta/dri:userMeta/dri:metadata[@element='identifier' and @qualifier='lastName']"/>-->
                                                 </a>
-                                                <a class="btn btn-sm btn-danger">
+                                                <a class="btn btn-sm btn-danger blue-tooltip" data-toggle="tooltip" data-placement="bottom" title="Logout">
                                                     <xsl:attribute name="href">
                                                         <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/dri:metadata[@element='identifier' and @qualifier='logoutURL']"/>
                                                     </xsl:attribute>
-                                                    <i18n:text>xmlui.dri2xhtml.structural.logout</i18n:text>
+                                                    <span class="glyphicon glyphicon-log-out"></span>
+                                                    <!--<i18n:text>xmlui.dri2xhtml.structural.logout</i18n:text>-->
                                                 </a>
                                             </xsl:when>
                                             <xsl:otherwise>
@@ -599,7 +602,8 @@
                                                     <xsl:attribute name="href">
                                                         <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/dri:metadata[@element='identifier' and @qualifier='loginURL']"/>
                                                     </xsl:attribute>
-                                                    <i18n:text>xmlui.dri2xhtml.structural.login</i18n:text>
+                                                    <span class="glyphicon glyphicon-log-in"></span> Log on
+                                                    <!--<i18n:text>xmlui.dri2xhtml.structural.login</i18n:text>-->
                                                 </a>
                                             </xsl:otherwise>
                                         </xsl:choose>
