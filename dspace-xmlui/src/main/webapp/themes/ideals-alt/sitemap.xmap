@@ -82,17 +82,18 @@
             <!-- 3 different IncludePageMeta transformers to ensure that the
                  stylesheets end up in the correct order-->
             <map:transform type="IncludePageMeta">
-                <map:parameter name="stylesheet.screen,print#0" value="lib/css/bootstrap.min.css"/>
-                <map:parameter name="stylesheet.screen,print#1" value="lib/css/reset.css"/>
-                <map:parameter name="stylesheet.screen,print#2" value="lib/css/base.css"/>
-                <map:parameter name="stylesheet.screen,print#3" value="lib/css/helper.css"/>
-                <map:parameter name="stylesheet.screen,print#4" value="lib/css/jquery-ui-1.8.15.custom.css"/>
-                <map:parameter name="stylesheet.screen,print#5" value="lib/css/style.css"/>
-                <map:parameter name="stylesheet.screen,print#6" value="lib/css/authority-control.css"/>
-                <map:parameter name="stylesheet.screen,print#7" value="lib/css/collection-tree.css"/>
-                <map:parameter name="stylesheet.screen,print#8" value="lib/css/submit-form.css"/>
-                <map:parameter name="stylesheet.screen,print#9" value="lib/css/submit-upload.css"/>
-                <map:parameter name="stylesheet.screen,print#10" value="lib/css/jquery.dataTables.css"/>
+              <map:parameter name="stylesheet.screen,print" value="lib/css/main.css"/>
+                <!--<map:parameter name="stylesheet.screen,print#0" value="lib/css/bootstrap.min.css"/>-->
+                <!--<map:parameter name="stylesheet.screen,print#1" value="lib/css/reset.css"/>-->
+                <!--<map:parameter name="stylesheet.screen,print#2" value="lib/css/base.css"/>-->
+                <!--<map:parameter name="stylesheet.screen,print#3" value="lib/css/helper.css"/>-->
+                <!--<map:parameter name="stylesheet.screen,print#4" value="lib/css/jquery-ui-1.8.15.custom.css"/>-->
+                <!--<map:parameter name="stylesheet.screen,print#5" value="lib/css/style.css"/>-->
+                <!--<map:parameter name="stylesheet.screen,print#6" value="lib/css/authority-control.css"/>-->
+                <!--<map:parameter name="stylesheet.screen,print#7" value="lib/css/collection-tree.css"/>-->
+                <!--<map:parameter name="stylesheet.screen,print#8" value="lib/css/submit-form.css"/>-->
+                <!--<map:parameter name="stylesheet.screen,print#9" value="lib/css/submit-upload.css"/>-->
+                <!--<map:parameter name="stylesheet.screen,print#10" value="lib/css/jquery.dataTables.css"/>-->
             </map:transform>
             <map:transform type="IncludePageMeta">
                 <map:parameter name="stylesheet.handheld" value="lib/css/handheld.css"/>

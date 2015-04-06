@@ -1,0 +1,51 @@
+/*** BODY: community page that lists all communities ***/
+/*** Styles for expandable tree on collection page ***/
+/*** The tree is implemented by mktree.js		   ***/
+/*** A class named 'mktree' must be in the top <ul> tag ***/
+/*** of the unordered list. Info about the javascript: ***/
+/*** http://www.javascripttoolbox.com/lib/mktree/source.php ***/
+ul.mktree {
+	margin: 0;
+	padding: 0;
+}
+ul.mktree  li {
+	list-style: none;
+}
+ ul.mktree ul , ul.mktree li {
+	margin: 5px 0 0 10px;
+	padding: 0;
+}
+ul.mktree li .bullet {
+	padding-left: 15px;
+}
+ul.mktree li.liOpen .bullet {
+	cursor: pointer;
+	background: url(../../images/minus.gif)  center left no-repeat;
+}
+ul.mktree li.liClosed .bullet {
+	cursor: pointer;
+	background: url(../../images/plus.gif) center left no-repeat;
+}
+ul.mktree li.liBullet .bullet {
+	cursor: default;
+	background: url(../../images/bullet.gif) center left no-repeat;
+}
+ul.mktree li.liOpen ul {
+	display: block;
+}
+ul.mktree li.liClosed ul {
+	display: none;
+}
+ul.mktree a {
+	color: #003C7D; /* U of I Blue */
+	font-size: 125%;
+	font-weight: bolder;
+	text-decoration: none;
+}
+ul.mktree a:visited, ul.mktree a:active {
+	color: #003C7D; /* U of I Blue */
+}
+ul.mktree a:hover {
+	color: #808080; /* gray */
+}
+/*** END BODY: community page that lists all communities ***/

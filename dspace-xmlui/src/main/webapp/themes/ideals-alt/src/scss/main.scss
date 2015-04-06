@@ -1,0 +1,24 @@
+/*-------------------------------------------------*\
+  $MAIN
+\*-------------------------------------------------*/
+
+/*-------------------------------------------------*\
+  $IMPORTS
+  Add or remove libraries as needed below. If you
+  don't need a library, remove it to reduce overall
+  file size.
+\*-------------------------------------------------*/
+
+@import "vars";
+@import "bootstrap";
+@import "font-awesome";
+@import "reset";
+@import "base";
+@import "helper";
+@import "jquery-ui-1.8.15.custom";
+@import "style";
+@import "authority-control";
+@import "collection-tree";
+@import "submit-form";
+@import "submit-upload";
+@import "jquery.dataTables";
