@@ -517,13 +517,13 @@
                             <!--Test Start-->
                             <div class="row">
                                 <div id="ds-user-links" class="hidden-xs">
-                                    <div id="search-place">
+                                    <div id="search-place" class="col-sm-3 col-md-3 col-lg-3">
                                         <form accept-charset="UTF-8" action="/search" class="form-inline" id="top_search_form" method="post">
                                             <xsl:attribute name="action">
                                                 <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='simpleURL']"/>
                                             </xsl:attribute>
 
-                                            <div class="input-group col-sm-3 col-md-3 col-lg-3">
+                                            <div class="input-group">
                                                 <label class="sr-only" for="input-search">
                                                     <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='queryField']"/>
                                                 </label>
@@ -612,13 +612,12 @@
 
                                 <!-- customized div to produce radio buttons and 'advanced search'
                                 link found underneath search box -->
-                                <div class="col-xs-8 col-sm-4 col-md-4 col-lg-3" id="ideals-search-scope">
+                                <div class="col-xs-8 col-sm-5 col-md-4 col-lg-4" id="ideals-search-scope">
                                     <!-- Determine possible search scopes for main search box -->
                                     <xsl:choose>
                                         <xsl:when test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='focus'][@qualifier='container']">
                                             <!-- Search IDEALS -->
                                             <label class="radio-inline" id="ideals_scope_all" for="ds-search-form-scope-all">
-                                                <i18n:text>xmlui.dri2xhtml.structural.search</i18n:text>
                                                 <input id="ds-search-form-scope-all" type="radio" name="scope" value="">
                                                     <xsl:attribute name="checked">
                                                         <xsl:choose>
@@ -631,18 +630,11 @@
                                                         </xsl:choose>
                                                     </xsl:attribute>
                                                 </input>
+                                                <i18n:text>xmlui.dri2xhtml.structural.search</i18n:text>
                                             </label>
 
                                             <!-- Search This Community/Collection -->
                                             <label class="radio-inline" id="ideals_scope_container" for="ds-search-form-scope-container">
-                                                <xsl:choose>
-                                                    <xsl:when test="/dri:document/dri:body//dri:div/dri:referenceSet[@type='detailView' and @n='community-view']">
-                                                        <i18n:text>xmlui.dri2xhtml.structural.search-in-community</i18n:text>
-                                                    </xsl:when>
-                                                    <xsl:otherwise>
-                                                        <i18n:text>xmlui.dri2xhtml.structural.search-in-collection</i18n:text>
-                                                    </xsl:otherwise>
-                                                </xsl:choose>
                                                 <input id="ds-search-form-scope-container" type="radio" name="scope">
                                                     <xsl:attribute name="value">
                                                         <xsl:value-of select="substring-after(/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='focus'][@qualifier='container'],':')"/>
@@ -658,6 +650,14 @@
                                                         </xsl:choose>
                                                     </xsl:attribute>
                                                 </input>
+                                                <xsl:choose>
+                                                    <xsl:when test="/dri:document/dri:body//dri:div/dri:referenceSet[@type='detailView' and @n='community-view']">
+                                                        <i18n:text>xmlui.dri2xhtml.structural.search-in-community</i18n:text>
+                                                    </xsl:when>
+                                                    <xsl:otherwise>
+                                                        <i18n:text>xmlui.dri2xhtml.structural.search-in-collection</i18n:text>
+                                                    </xsl:otherwise>
+                                                </xsl:choose>
                                             </label>
                                         </xsl:when>
                                     </xsl:choose>

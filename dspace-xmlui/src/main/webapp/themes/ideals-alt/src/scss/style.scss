@@ -167,10 +167,8 @@ img#ds-header-logo-sm {
 }
 
 #ds-header-sm {
-    background-color:#F5F8FA;
     text-align: center;
     padding-top: 15px;
-
 }
 
 #ds-header-sm div.form-group  {
@@ -2133,6 +2131,7 @@ li.list-group-item>a:hover{
 
 div#ideals-search-scope.col-xs-8{
     margin-bottom:8px;
+    float:right;
 }
 
 .btn-danger{
@@ -2149,4 +2148,8 @@ div#ideals-search-scope.col-xs-8{
 .blue-tooltip + .tooltip > .tooltip-arrow {
     border-top-color: #336699;
     border-bottom-color:#336699;
+}
+
+#search-place .input-group-btn {
+  width: 1%;
 }
