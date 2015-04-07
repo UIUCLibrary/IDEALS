@@ -16,14 +16,14 @@ var gulp = require('gulp'),
   livereload = require('gulp-livereload'),
   del = require('del');
 
-
+// Paths - needed to find bootstrap adn fontawesome since they are downloaded by npm
 var paths = {
   'bootstrap': 'node_modules/bootstrap-sass/assets',
   'fontawesome': 'node_modules/font-awesome'
 };
 
 // Compile Sass, Autoprefix and minify
-gulp.task('sass', function() {
+gulp.task('styles', function() {
   return sass('src/scss/main.scss', {
     style: 'expanded',
     precision: '8',
@@ -42,4 +42,28 @@ gulp.task('sass', function() {
     .pipe(notify({
       message: 'Styles task complete'
     }));
+});
+
+// Clean
+gulp.task('clean', function(cb) {
+    //del(['dist/assets/css', 'dist/assets/js', 'dist/assets/img'], cb)
+});
+
+// Default task
+gulp.task('default', ['clean'], function() {
+    gulp.start('styles');
+});
+
+// Watch
+gulp.task('watch', function() {
+
+    // Watch .scss files
+    gulp.watch('src/scss/**/*.scss', ['styles']);
+
+    //// Watch .js files
+    //gulp.watch('src/scripts/**/*.js', ['scripts']);
+    //
+    //// Watch image files
+    //gulp.watch('src/images/**/*', ['images']);
+
 });
