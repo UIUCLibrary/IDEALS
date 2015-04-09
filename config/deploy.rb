@@ -8,7 +8,7 @@ require 'open-uri'
 set :application, "ideals-dspace"
 
 set :scm, :git
-set :repository, "ssh://git@bitbucket.org/UIUCLibrary/ideals-dspace-master.git"
+set :repository, "git@github.com:UIUCLibrary/IDEALS.git"
 
 set :production_server, "vanaheim.cites.illinois.edu"
 set :staging_server, "vanaheim-dev.cites.illinois.edu"
@@ -81,7 +81,7 @@ set :pg_host, "#{pg_home}/run"
 
 # DSpace
 set :dspace_name, "dspace"
-set :dspace_version, "3.2"
+set :dspace_version, "5.2"
 set :dspace_home, "#{service_root}/dspace"
 set :dspace_source, "#{deploy_to}"
 set :dspace_db_user, "dspace"
@@ -153,17 +153,17 @@ namespace :dspace do
 
   desc "Build dspace with maven"
   task :build, :roles => [:app] do
-    run "cd #{deploy_to}/current && JAVA_HOME=#{java_home} MAVEN_OPTS=\"#{maven_opts}\" #{maven_home}/bin/mvn  clean package"
+    run "cd #{deploy_to}/current && JAVA_HOME=#{java_home} MAVEN_OPTS=\"#{maven_opts}\" #{maven_home}/bin/mvn -U clean package"
   end
 
   desc "Deploy DSpace with Ant"
   task :deploy, :roles => [:app] do
-    run "cd #{deploy_to}/current/#{dspace_name}/target/#{dspace_name}-#{dspace_version}-build && JAVA_HOME=#{java_home} #{ant_home}/bin/ant fresh-install"
+    run "cd #{deploy_to}/current/#{dspace_name}/target/dspace-installer && JAVA_HOME=#{java_home} #{ant_home}/bin/ant fresh-install"
   end
 
   desc "Update DSpace with Ant"
   task :update, :roles => [:app] do
-    run "cd #{deploy_to}/current/#{dspace_name}/target/#{dspace_name}-#{dspace_version}-build && JAVA_HOME=#{java_home} #{ant_home}/bin/ant #{ant_opts}"
+    run "cd #{deploy_to}/current/#{dspace_name}/target/dspace-installer && JAVA_HOME=#{java_home} #{ant_home}/bin/ant #{ant_opts}"
   end
 
 end
