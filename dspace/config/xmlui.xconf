@@ -206,7 +206,7 @@
         <!-- <theme name="Kubrick" regex=".*" path="Kubrick/" /> -->
 
         <!-- Alternate IDEALS theme -->
-        <theme name="IDEALS Alt Theme" regex=".*" path="ideals-alt/" />
+        <theme name="IDEALS Theme" regex=".*" path="ideals/" />
 
         <!--
              For information on configuring the mobile theme, see:

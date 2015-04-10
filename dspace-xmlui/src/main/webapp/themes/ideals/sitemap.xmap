@@ -196,8 +196,8 @@
         -->
         <map:component-configurations>
             <global-variables>
-                <theme-path>ideals-alt</theme-path>
-                <theme-name>ideals-alt</theme-name>
+                <theme-path>ideals</theme-path>
+                <theme-name>ideals</theme-name>
             </global-variables>
         </map:component-configurations>
 

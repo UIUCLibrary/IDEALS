@@ -144,7 +144,7 @@ var submit_form_describe_organizer = {
         }
         field_list.prepend(accordion_div);
         field_list.append(submit_buttons);
-        $('h3', accordion_div).prepend("<img src='/themes/ideals-alt/images/page_white_edit.png' alt='edit section'>")
+        $('h3', accordion_div).prepend("<img src='/themes/ideals/images/page_white_edit.png' alt='edit section'>")
         //autoHeight is for early versions of jQuery, heightStyle for later (1.10 and after)
         accordion_div.accordion({heightStyle: "content", icons: false, autoHeight: false});
     },
@@ -213,12 +213,12 @@ var submit_form_describe_organizer = {
     //Add img div with trash icon for deleting a value, pencil for editing a value. This is added after the
     //supplied span, which must already be in the DOM.
     action_buttons_for_span: function (span) {
-        var delete_button = $("<img src='/themes/ideals-alt/images/trash.png' class='js-delete' alt='delete button'>");
+        var delete_button = $("<img src='/themes/ideals/images/trash.png' class='js-delete' alt='delete button'>");
         delete_button.click(function () {
             submit_form_describe_organizer.inline_delete(span);
         });
         span.after(delete_button);
-        var edit_button = $("<img src='/themes/ideals-alt/images/pencil.png' class='js-edit' alt='delete button'>");
+        var edit_button = $("<img src='/themes/ideals/images/pencil.png' class='js-edit' alt='delete button'>");
         edit_button.click(function () {
             span.click();
         });
@@ -226,12 +226,12 @@ var submit_form_describe_organizer = {
     },
 
     action_buttons_for_identifier_span: function (span) {
-        var delete_button = $("<img src='/themes/ideals-alt/images/trash.png' class='js-delete' alt='delete button'>");
+        var delete_button = $("<img src='/themes/ideals/images/trash.png' class='js-delete' alt='delete button'>");
         delete_button.click(function () {
             submit_form_describe_organizer.identifier_inline_delete(span);
         });
         span.after(delete_button);
-        var edit_button = $("<img src='/themes/ideals-alt/images/pencil.png' class='js-edit' alt='delete button'>");
+        var edit_button = $("<img src='/themes/ideals/images/pencil.png' class='js-edit' alt='delete button'>");
         edit_button.click(function () {
             span.click();
         });

@@ -226,7 +226,7 @@
                 </link>
             </xsl:if>
 
-            <script type="text/javascript" src="/themes/ideals-alt/lib/js/jquery-1.10.2.min.js">&#160;</script>
+            <script type="text/javascript" src="/themes/ideals/lib/js/jquery-1.10.2.min.js">&#160;</script>
             <!-- The following sets up some variables for the next javascript to use -->
             <script type="text/javascript">
                 var page_structure_js_data = {
@@ -236,7 +236,7 @@
 
             <!-- The following javascript removes the default text of empty text areas when they are focused on or submitted -->
             <!-- There is also javascript to disable submitting a form when the 'enter' key is pressed. -->
-            <script type="text/javascript" src="/themes/ideals-alt/lib/js/page-structure.js">&#160;</script>
+            <script type="text/javascript" src="/themes/ideals/lib/js/page-structure.js">&#160;</script>
 
             <!-- Modernizr enables HTML5 elements & feature detects -->
             <script type="text/javascript">
