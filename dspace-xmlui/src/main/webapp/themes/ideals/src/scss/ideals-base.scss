@@ -1,0 +1,169 @@
+/*
+ * IDEALS CSS
+ *
+ * Stylizes IDEALS after we reset any
+ * default browser styles using reset.css
+ */
+
+
+/*********************************
+** GLOBAL ELEMENTS and CLASSES ***
+**********************************/
+/* Main Colors Used
+ *
+ * #003C7D - U of I Blue
+ * #F47F24 - U of I Orange
+ *
+ * #F6F6F6 - lightest gray
+ * #EFEFEF - lighter gray
+ * #CCCCCC - light gray
+ * #808080 - gray
+ * #4C4C4C - dark gray
+ *
+ * #2A0000 - nearly black (for default text)
+ * #FF0000 - bright red (for error text)
+ * #990000 - dark red (for submission progress bar)
+ */
+
+p {
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #F47F24;
+  color: #003C7D;
+  text-shadow: none;
+}
+
+::selection {
+  background: #F47F24;
+  color: #003C7D;
+  text-shadow: none;
+}
+
+/* www.aestheticallyloyal.com/public/optimize-legibility/ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* maxvoltar.com/archive/-webkit-font-smoothing */
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active {
+  outline: none;
+}
+
+/*a, a:active, a:visited { color:#607890; }*/
+/*a:hover { color:#036; }*/
+
+a, a:visited {
+  color: #003C7D; /* U of I Blue */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #F47F24;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #F47F24; /* U of I Orange */
+}
+
+ul {
+  margin-left: 30px;
+}
+
+ol {
+  margin-left: 30px;
+  list-style-type: decimal;
+}
+
+small {
+  font-size: 85%;
+}
+
+.bold, strong, th {
+  font-weight: bold;
+}
+
+td, td img {
+  vertical-align: top;
+}
+
+sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+pre {
+  padding: 15px;
+
+  /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
+  white-space: pre; /* CSS2 */
+  white-space: pre-wrap; /* CSS 2.1 */
+  white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word; /* IE */
+}
+
+/* align checkboxes, radios, text inputs with their label
+   by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
+input[type="radio"] {
+  vertical-align: text-bottom;
+}
+
+input[type="checkbox"] {
+  vertical-align: bottom;
+  *vertical-align: baseline;
+}
+
+.ie6 input {
+  vertical-align: text-bottom;
+}
+
+/* hand cursor on clickable input elements */
+label, input[type=button], input[type=submit], button {
+  cursor: pointer;
+}
+
+/* These selection declarations have to be separate.
+   No text-shadow: twitter.com/miketaylr/status/12228805301  */
+/*::-moz-selection{ background: #5e9fff; color:#fff; text-shadow: none; }*/
+/*::selection { background:#5e9fff; color:#fff; text-shadow: none; }*/
+
+/*  j.mp/webkit-tap-highlight-color */
+a:link {
+  -webkit-tap-highlight-color: #5e9fff;
+}
+
+/* always force a scrollbar in non-IE */
+html {
+  overflow-y: scroll;
+}
+
+/* make buttons play nice in IE:
+   www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+button {
+  width: auto;
+  overflow: visible;
+}
+
+/* bicubic resizing for non-native sized IMG:
+   code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
+.ie7 img { -ms-interpolation-mode: bicubic; }

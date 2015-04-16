@@ -10,15 +10,22 @@
  *
  * print styles
  */
-* { background: transparent !important; color: #444 !important; text-shadow: none; }
+* {
+  background: transparent !important;
+  color: #444 !important;
+  text-shadow: none;
+}
 
+a:after {
+  content: "" !important;
+}
 
-a:after { content: "" !important; }
+abbr:after {
+  content: "" !important;
+}
 
+.ir a:after {
+  content: "" !important;
+}
 
-abbr:after { content: "" !important; }
-
-.ir a:after { content: "" !important; }  /* Don't show links for images */
-
-
-
+/* Don't show links for images */
