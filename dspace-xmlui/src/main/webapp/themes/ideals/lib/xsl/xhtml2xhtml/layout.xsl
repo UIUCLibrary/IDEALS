@@ -153,6 +153,13 @@
         </xsl:copy>
     </xsl:template>
 
+    <!--Change the "Related items" heading to <h2>-->
+    <xsl:template match="xhtml:div[@id='aspect_discovery_RelatedItems_div_item-related']/xhtml:h1">
+        <h2>
+            <xsl:copy-of select="@*|node()"/>
+        </h2>
+    </xsl:template>
+
     <!--checkboxes-->
     <xsl:template match="xhtml:fieldset[@class='ds-checkbox-field' or @class='ds-checkbox-field error']//xhtml:label">
         <xsl:copy>

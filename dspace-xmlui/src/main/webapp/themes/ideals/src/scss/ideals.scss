@@ -1,3 +1,27 @@
+/*********************************
+** GLOBAL ELEMENTS and CLASSES ***
+**********************************/
+/* Main Colors Used
+ *
+ * #003C7D - U of I Blue
+ * #F47F24 - U of I Orange
+ *
+ * #F6F6F6 - lightest gray
+ * #EFEFEF - lighter gray
+ * #CCCCCC - light gray
+ * #808080 - gray
+ * #4C4C4C - dark gray
+ *
+ * #2A0000 - nearly black (for default text)
+ * #FF0000 - bright red (for error text)
+ * #990000 - dark red (for submission progress bar)
+ */
+
+$ideals-blue: #587498;
+$ideals-dark-blue: #1F3F5E;
+$ideals-orange: #F3843E;
+$ideals-green: #006621;
+
 // Normalize and base styles from H5BP
 @import "h5bp-normalize";
 @import "h5bp-base";

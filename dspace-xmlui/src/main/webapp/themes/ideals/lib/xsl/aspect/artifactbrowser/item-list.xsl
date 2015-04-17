@@ -128,6 +128,7 @@
                     <xsl:value-of select="substring-after(@MIMETYPE,'/')"/>
                 </xsl:with-param>
             </xsl:call-template>
+            <xsl:text> </xsl:text>
             <!-- Display Type of File (e.g. PDF)-->
             <!-- Add Javascript to open up file downloads in a separate window.
                  This does the same thing as target="_blank", but is valid for XHTML 1.0.
@@ -154,7 +155,7 @@
             <xsl:call-template name="getFileSize">
                 <xsl:with-param name="file" select="."/>
             </xsl:call-template>
-            <xsl:text>)</xsl:text>
+            <xsl:text>) </xsl:text>
 
             <!--Check if this file has access restritions, and if so, display a lock icon-->
             <!-- This template is in 'ideals-utils.xsl' -->

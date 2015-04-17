@@ -82,8 +82,8 @@
       <!-- 3 different IncludePageMeta transformers to ensure that the
            stylesheets end up in the correct order-->
       <map:transform type="IncludePageMeta">
-        <map:parameter name="stylesheet.screen,print#0" value="lib/css/bootstrap.css"/>
-        <map:parameter name="stylesheet.screen,print#1" value="lib/css/font-awesome.css"/>
+        <map:parameter name="stylesheet.screen,print#0" value="lib/css/bootstrap.min.css"/>
+        <map:parameter name="stylesheet.screen,print#1" value="lib/css/font-awesome.min.css"/>
         <map:parameter name="stylesheet.screen,print#3" value="lib/css/ideals.css"/>
         <!--<map:parameter name="stylesheet.screen,print#2" value="lib/css/h5bp-normalize.css"/>-->
         <!--<map:parameter name="stylesheet.screen,print#3" value="lib/css/h5bp-base.css"/>-->

@@ -185,35 +185,35 @@
                 <!-- End custom navigation INFORMATION block -->
 
                 <!-- Custom code for IDEALs to supply ACCESS RESTRICTIONS block in left navigation -->
-                <h1 class="ds-option-set-head">Access Key</h1>
-                <div id="aspect_artifactbrowser_Navigation_list_ideals_access_restrictions" class="ds-option-set">
-                    <ul class="list-group ds-simple-list">
-                        <li class="list-group-item">
-                            <div>
-                                <img src="{$theme-path}/images/lock.png" alt="Closed Access" title="Closed Access"/>
-                            </div>
-                            <a onclick="window.open(this.href); return false;"
-                               onkeypress="window.open(this.href); return false;">
-                                <xsl:attribute name="href">
-                                    <xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Access+Restriction+Policy</xsl:text>
-                                </xsl:attribute>
-                                <i18n:text>xmlui.dri2xhtml.structural.access-closed</i18n:text>
-                            </a>
-                        </li>
+                <!--<h1 class="ds-option-set-head">Access Key</h1>-->
+                <!--<div id="aspect_artifactbrowser_Navigation_list_ideals_access_restrictions" class="ds-option-set">-->
+                    <!--<ul class="list-group ds-simple-list">-->
+                        <!--<li class="list-group-item">-->
+                            <!--<div>-->
+                                <!--<img src="{$theme-path}/images/lock.png" alt="Closed Access" title="Closed Access"/>-->
+                            <!--</div>-->
+                            <!--<a onclick="window.open(this.href); return false;"-->
+                               <!--onkeypress="window.open(this.href); return false;">-->
+                                <!--<xsl:attribute name="href">-->
+                                    <!--<xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Access+Restriction+Policy</xsl:text>-->
+                                <!--</xsl:attribute>-->
+                                <!--<i18n:text>xmlui.dri2xhtml.structural.access-closed</i18n:text>-->
+                            <!--</a>-->
+                        <!--</li>-->
 
-                        <li class="list-group-item">
-                            <div>
-                                <img src="{$theme-path}/images/lock-illinois.png" alt="Campus Access" title="Campus Access"/>
-                            </div>
-                            <a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
-                                <xsl:attribute name="href">
-                                    <xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Access+Restriction+Policy</xsl:text>
-                                </xsl:attribute>
-                                <i18n:text>xmlui.dri2xhtml.structural.access-campus</i18n:text>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                        <!--<li class="list-group-item">-->
+                            <!--<div>-->
+                                <!--<img src="{$theme-path}/images/lock-illinois.png" alt="Campus Access" title="Campus Access"/>-->
+                            <!--</div>-->
+                            <!--<a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">-->
+                                <!--<xsl:attribute name="href">-->
+                                    <!--<xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Access+Restriction+Policy</xsl:text>-->
+                                <!--</xsl:attribute>-->
+                                <!--<i18n:text>xmlui.dri2xhtml.structural.access-campus</i18n:text>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
                  <!--End custom navigation ACCESS RESTRICTIONS block -->
 
             </div>

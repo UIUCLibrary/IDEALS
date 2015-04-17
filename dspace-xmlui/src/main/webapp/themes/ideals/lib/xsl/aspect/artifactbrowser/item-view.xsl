@@ -1042,7 +1042,6 @@
     <xsl:template match="dri:div[@n='item-view']/dri:head" priority="5">
     </xsl:template>
 
-
     <!--
       It displays the table associated with 'Files in this Item' found on the item view page.
       For IDEALS, we removed the columns for 'size' and the 'view/open' link.  Instead,
@@ -1182,7 +1181,7 @@
                     <xsl:call-template name="getFileSize">
                         <xsl:with-param name="file" select="."/>
                     </xsl:call-template>
-                    <xsl:text>)</xsl:text>
+                    <xsl:text>) </xsl:text>
                 </span>
 
                 <!--Check if this file has access restritions, and if so, display a lock icon-->
@@ -1306,7 +1305,7 @@
                 <xsl:otherwise><xsl:text>page_white.png</xsl:text></xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        <p><xsl:value-of select="$mimetype"/></p>
+        <!--<p><xsl:value-of select="$mimetype"/></p>-->
         <!--Return an 'img' tag which references this file format icon-->
         <xsl:variable name="file_type">
             <xsl:call-template name="getFileTypeDesc">
@@ -1398,43 +1397,76 @@
 
         <!--<p><xsl:copy-of select="$file_restrictions//rights:Context"/></p>-->
         <!--Attempt to determine the name of the appropriate access restriction icon-->
-        <xsl:variable name="restriction_icon">
-            <xsl:if test="$file_restrictions">
-                <!--Assuming we have file restrictions, we need to determine the *type*
-                    of access restrictions in place. This type is defined by within
-                    the <Context> tag of METSRights section -->
-                <xsl:choose>
-                    <!--First, check if General Public is given access (this overrides all other settings)-->
-                    <xsl:when test="$file_restrictions//rights:Context[@in-effect='true' and @CONTEXTCLASS='GENERAL PUBLIC']"></xsl:when>
-                    <!--Next, check for restrictions to Illinois users ONLY-->
-                    <xsl:when test="$file_restrictions//rights:Context[@in-effect='true' and @CONTEXTCLASS='MANAGED GRP']/rights:UserName[@USERTYPE='GROUP']/text()=$Illinois_Users_Group">lock-illinois.png</xsl:when>
-                    <!--Otherwise, there are tighter restrictions, so display general lock icon-->
-                    <xsl:otherwise>lock.png</xsl:otherwise>
-                </xsl:choose>
-            </xsl:if>
-        </xsl:variable>
+        <!--<xsl:variable name="restriction_icon">-->
+            <!--<xsl:if test="$file_restrictions">-->
+                <!--&lt;!&ndash;Assuming we have file restrictions, we need to determine the *type*-->
+                    <!--of access restrictions in place. This type is defined by within-->
+                    <!--the <Context> tag of METSRights section &ndash;&gt;-->
+                <!--<xsl:choose>-->
+                    <!--&lt;!&ndash;First, check if General Public is given access (this overrides all other settings)&ndash;&gt;-->
+                    <!--<xsl:when test="$file_restrictions//rights:Context[@in-effect='true' and @CONTEXTCLASS='GENERAL PUBLIC']"></xsl:when>-->
+                    <!--&lt;!&ndash;Next, check for restrictions to Illinois users ONLY&ndash;&gt;-->
+                    <!--<xsl:when test="$file_restrictions//rights:Context[@in-effect='true' and @CONTEXTCLASS='MANAGED GRP']/rights:UserName[@USERTYPE='GROUP']/text()=$Illinois_Users_Group">lock-illinois.png</xsl:when>-->
+                    <!--&lt;!&ndash;Otherwise, there are tighter restrictions, so display general lock icon&ndash;&gt;-->
+                    <!--<xsl:otherwise>lock.png</xsl:otherwise>-->
+                <!--</xsl:choose>-->
+            <!--</xsl:if>-->
+        <!--</xsl:variable>-->
 
         <!--The file only has access restrictions
             if the $restriction_icon has a value-->
-        <xsl:if test="string-length($restriction_icon)>0">
+        <!--<xsl:if test="string-length($restriction_icon)>0">-->
 
-            <!--Determine the access restriction text to display as img 'alt' attribute-->
-            <xsl:variable name="restriction_text">
-                <xsl:if test="$restriction_icon='lock.png'">Restricted Access</xsl:if>
-                <xsl:if test="$restriction_icon='lock-illinois.png'">Restricted to U of Illinois</xsl:if>
-            </xsl:variable>
+            <!--&lt;!&ndash;Determine the access restriction text to display as img 'alt' attribute&ndash;&gt;-->
+            <!--<xsl:variable name="restriction_text">-->
+                <!--<xsl:if test="$restriction_icon='lock.png'">Restricted Access</xsl:if>-->
+                <!--<xsl:if test="$restriction_icon='lock-illinois.png'">Restricted to U of Illinois</xsl:if>-->
+            <!--</xsl:variable>-->
 
-            <!--Build an <img> tag to display the restriction icon-->
-            <img alt="Access Restrictions Icon" class="restrict-icon">
-                <xsl:attribute name="src">
-                    <xsl:value-of select="$theme-path"/>
-                    <xsl:text>/images/</xsl:text>
-                    <xsl:value-of select="$restriction_icon"/>
-                </xsl:attribute>
-                <xsl:attribute name="alt"><xsl:value-of select="$restriction_text"/></xsl:attribute>
-                <xsl:attribute name="title"><xsl:value-of select="$restriction_text"/></xsl:attribute>
-            </img>
+            <!--&lt;!&ndash;Build an <img> tag to display the restriction icon&ndash;&gt;-->
+            <!--<img alt="Access Restrictions Icon" class="restrict-icon">-->
+                <!--<xsl:attribute name="src">-->
+                    <!--<xsl:value-of select="$theme-path"/>-->
+                    <!--<xsl:text>/images/</xsl:text>-->
+                    <!--<xsl:value-of select="$restriction_icon"/>-->
+                <!--</xsl:attribute>-->
+                <!--<xsl:attribute name="alt"><xsl:value-of select="$restriction_text"/></xsl:attribute>-->
+                <!--<xsl:attribute name="title"><xsl:value-of select="$restriction_text"/></xsl:attribute>-->
+            <!--</img>-->
+        <!--</xsl:if>-->
+
+      <xsl:variable name="restriction_text">
+        <xsl:if test="$file_restrictions">
+          <!--Assuming we have file restrictions, we need to determine the *type*
+              of access restrictions in place. This type is defined by within
+              the <Context> tag of METSRights section -->
+          <xsl:choose>
+            <!--First, check if General Public is given access (this overrides all other settings)-->
+            <xsl:when test="$file_restrictions//rights:Context[@in-effect='true' and @CONTEXTCLASS='GENERAL PUBLIC']"></xsl:when>
+            <!--Next, check for restrictions to Illinois users ONLY-->
+            <xsl:when
+              test="$file_restrictions//rights:Context[@in-effect='true' and @CONTEXTCLASS='MANAGED GRP']/rights:UserName[@USERTYPE='GROUP']/text()=$Illinois_Users_Group">UofI Only</xsl:when>
+            <!--Otherwise, there are tighter restrictions, so display general lock icon-->
+            <xsl:otherwise>Restricted</xsl:otherwise>
+          </xsl:choose>
         </xsl:if>
+      </xsl:variable>
+
+      <xsl:if test="string-length($restriction_text)>0">
+
+        <!--Determine the access restriction text to display as img 'alt' attribute-->
+        <xsl:variable name="label-type">
+          <xsl:if test="$restriction_text='Open Access'">label-success</xsl:if>
+          <xsl:if test="$restriction_text='Restricted'">label-danger</xsl:if>
+          <xsl:if test="$restriction_text='UofI Only'">label-warning</xsl:if>
+        </xsl:variable>
+
+        <span>
+          <xsl:attribute name="class">label <xsl:value-of select="$label-type"/></xsl:attribute>
+          <xsl:value-of select="$restriction_text"/>
+        </span>
+
+      </xsl:if>
 
     </xsl:template>
 

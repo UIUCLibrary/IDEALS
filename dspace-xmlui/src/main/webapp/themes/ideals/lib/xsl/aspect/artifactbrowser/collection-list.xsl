@@ -107,14 +107,14 @@
             <xsl:text>]</xsl:text>
         </xsl:if>
         <br/>
-        <xsl:choose>
-            <xsl:when test="$data/dim:field[@element='description' and @qualifier='abstract']">
-                <xsl:copy-of select="$data/dim:field[@element='description' and @qualifier='abstract']/node()"/>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:copy-of select="$data/dim:field[@element='description'][1]/node()"/>
-            </xsl:otherwise>
-        </xsl:choose>
+        <!--<xsl:choose>-->
+            <!--<xsl:when test="$data/dim:field[@element='description' and @qualifier='abstract']">-->
+                <!--&lt;!&ndash;<xsl:copy-of select="$data/dim:field[@element='description' and @qualifier='abstract']/node()"/>&ndash;&gt;-->
+            <!--</xsl:when>-->
+            <!--<xsl:otherwise>-->
+                <!--&lt;!&ndash;<xsl:copy-of select="$data/dim:field[@element='description'][1]/node()"/>&ndash;&gt;-->
+            <!--</xsl:otherwise>-->
+        <!--</xsl:choose>-->
     </xsl:template>
 
 </xsl:stylesheet>

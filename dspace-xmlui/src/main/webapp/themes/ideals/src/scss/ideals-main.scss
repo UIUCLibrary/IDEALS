@@ -43,7 +43,7 @@ select.multiple {
 }
 
 .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
-  color: #F47F24;
+  color: $ideals-orange;
   background-color: transparent;
 }
 
@@ -137,7 +137,7 @@ img#ds-header-logo-sm {
 
 #ds-trail li {
   display: inline;
-  color: #1F3F5E;
+  color: $ideals-dark-blue;
   margin-right: 5px;
 }
 
@@ -796,7 +796,7 @@ input.ds-password-field.error {
 .ds-form-list legend {
   font-size: 182%;
   margin-bottom: 15px;
-  color: #1F3F5E;
+  color: $ideals-dark-blue;
 }
 
 .ds-form-item legend {
@@ -1012,11 +1012,11 @@ span.field-help {
 
 .current-page-link {
   font-weight: bold;
-  color: #1F3F5E;
+  color: $ideals-dark-blue;
 }
 
 .current-page-link a {
-  color: #1F3F5E;
+  color: $ideals-dark-blue;
 }
 
 .pagination-info {
@@ -1079,7 +1079,7 @@ span.field-help {
 
 .result-query,
 .artifact-info {
-  color: #006621; /* green */
+  color: $ideals-green;
 }
 
 .artifact-abstract {
@@ -1277,6 +1277,7 @@ div.simple-item-view-description {
 }
 
 #aspect_artifactbrowser_ItemViewer_div_item-view h2,
+#aspect_discovery_RelatedItems_div_item-related h2,
 div.simple-item-view-description h3 {
   border-bottom: 1px solid #ddd;
   margin-bottom: 3px;
@@ -1387,8 +1388,8 @@ form.discover-sort-box select {
   padding: 4px;
   cursor: pointer;
   margin: 2px;
-  background-color: #6D859C;
-  border: 1px solid #1F3F5E;
+  background-color: $ideals-blue;
+  border: 1px solid $ideals-dark-blue;
   text-indent: -1000px;
   width: 30px;
   height: 30px;
@@ -1694,13 +1695,13 @@ form#aspect_submission_StepTransformer_div_submit-restrict fieldset.ds-radio-fie
 
 .panel-default > .panel-heading {
   color: white;
-  background-color: #587498;
+  background-color: $ideals-blue;
   border-color: #ddd;
 }
 
 a.list-group-item:hover, li.list-group-item:hover {
   color: #ffffff;
-  background-color: #F3843E;
+  background-color: $ideals-orange;
 }
 
 li.list-group-item > a:hover {
@@ -1709,7 +1710,7 @@ li.list-group-item > a:hover {
 
 .panel-primary > .panel-heading {
   color: #ffffff;
-  background-color: #587498;
+  background-color: $ideals-blue;
   border-color: #607990;
 }
 

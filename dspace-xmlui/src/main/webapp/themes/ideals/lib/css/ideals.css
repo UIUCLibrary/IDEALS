@@ -1,3 +1,21 @@
+/*********************************
+** GLOBAL ELEMENTS and CLASSES ***
+**********************************/
+/* Main Colors Used
+ *
+ * #003C7D - U of I Blue
+ * #F47F24 - U of I Orange
+ *
+ * #F6F6F6 - lightest gray
+ * #EFEFEF - lighter gray
+ * #CCCCCC - light gray
+ * #808080 - gray
+ * #4C4C4C - dark gray
+ *
+ * #2A0000 - nearly black (for default text)
+ * #FF0000 - bright red (for error text)
+ * #990000 - dark red (for submission progress bar)
+ */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -2578,24 +2596,6 @@ table.dataTable thead td:active {
  * Stylizes IDEALS after we reset any
  * default browser styles using reset.css
  */
-/*********************************
-** GLOBAL ELEMENTS and CLASSES ***
-**********************************/
-/* Main Colors Used
- *
- * #003C7D - U of I Blue
- * #F47F24 - U of I Orange
- *
- * #F6F6F6 - lightest gray
- * #EFEFEF - lighter gray
- * #CCCCCC - light gray
- * #808080 - gray
- * #4C4C4C - dark gray
- *
- * #2A0000 - nearly black (for default text)
- * #FF0000 - bright red (for error text)
- * #990000 - dark red (for submission progress bar)
- */
 p {
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.9);
 }
@@ -2606,13 +2606,13 @@ p {
  * Customize the background color to match your design.
  */
 ::-moz-selection {
-  background: #F47F24;
+  background: #F3843E;
   color: #003C7D;
   text-shadow: none;
 }
 
 ::selection {
-  background: #F47F24;
+  background: #F3843E;
   color: #003C7D;
   text-shadow: none;
 }
@@ -2643,13 +2643,12 @@ a, a:visited {
 }
 
 a:hover {
-  color: #F47F24;
+  color: #F3843E;
   text-decoration: underline;
 }
 
 a:active {
-  color: #F47F24;
-  /* U of I Orange */
+  color: #F3843E;
 }
 
 ul {
@@ -2815,7 +2814,7 @@ select.multiple {
 }
 
 .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
-  color: #F47F24;
+  color: #F3843E;
   background-color: transparent;
 }
 
@@ -3845,7 +3844,6 @@ span.field-help {
 .result-query,
 .artifact-info {
   color: #006621;
-  /* green */
 }
 
 .artifact-abstract {
@@ -4043,6 +4041,7 @@ div.simple-item-view-description {
 }
 
 #aspect_artifactbrowser_ItemViewer_div_item-view h2,
+#aspect_discovery_RelatedItems_div_item-related h2,
 div.simple-item-view-description h3 {
   border-bottom: 1px solid #ddd;
   margin-bottom: 3px;
@@ -4153,7 +4152,7 @@ form.discover-sort-box select {
   padding: 4px;
   cursor: pointer;
   margin: 2px;
-  background-color: #6D859C;
+  background-color: #587498;
   border: 1px solid #1F3F5E;
   text-indent: -1000px;
   width: 30px;
@@ -4845,7 +4844,7 @@ ul.mktree a:hover {
 #submit_describe_accordion h3.ui-state-active {
   font-weight: bold;
   color: white;
-  background: #6d859c none;
+  background: #587498 none;
 }
 
 #submit_describe_accordion span.field-help,

@@ -126,6 +126,7 @@
     <xsl:template match="dri:div[@id='aspect.artifactbrowser.CommunityRecentSubmissions.div.community-recent-submission' or
                                  @id='aspect.artifactbrowser.CollectionRecentSubmissions.div.collection-recent-submission' or
                                  @id='aspect.rochesterStatistics.StatisticsViewer.div.site-recent-submission' or
+                                 @id='aspect.discovery.RelatedItems.div.item-related' or
                                  @id='file.news.div.news']">
         <xsl:apply-templates select="@pagination">
             <xsl:with-param name="position">top</xsl:with-param>
@@ -151,8 +152,6 @@
             <xsl:with-param name="position">bottom</xsl:with-param>
         </xsl:apply-templates>
     </xsl:template>
-
-
 
 
     <!--IDEALS: Filter Search -->

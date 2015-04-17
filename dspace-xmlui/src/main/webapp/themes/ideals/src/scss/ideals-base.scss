@@ -6,25 +6,6 @@
  */
 
 
-/*********************************
-** GLOBAL ELEMENTS and CLASSES ***
-**********************************/
-/* Main Colors Used
- *
- * #003C7D - U of I Blue
- * #F47F24 - U of I Orange
- *
- * #F6F6F6 - lightest gray
- * #EFEFEF - lighter gray
- * #CCCCCC - light gray
- * #808080 - gray
- * #4C4C4C - dark gray
- *
- * #2A0000 - nearly black (for default text)
- * #FF0000 - bright red (for error text)
- * #990000 - dark red (for submission progress bar)
- */
-
 p {
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.9);
 }
@@ -36,13 +17,13 @@ p {
  */
 
 ::-moz-selection {
-  background: #F47F24;
+  background: $ideals-orange;
   color: #003C7D;
   text-shadow: none;
 }
 
 ::selection {
-  background: #F47F24;
+  background: $ideals-orange;
   color: #003C7D;
   text-shadow: none;
 }
@@ -73,12 +54,12 @@ a, a:visited {
 }
 
 a:hover {
-  color: #F47F24;
+  color: $ideals-orange;
   text-decoration: underline;
 }
 
 a:active {
-  color: #F47F24; /* U of I Orange */
+  color: $ideals-orange;
 }
 
 ul {
