@@ -39,31 +39,31 @@
                 <xsl:apply-templates/>
 
                 <!-- Custom code for IDEALs to supply INFORMATION block in left navigation -->
-                <h1 class="ds-option-set-head">Information</h1>
-                <div id="aspect_artifactbrowser_Navigation_list_ideals_information" class="ds-option-set">
-                    <div class="list-group ds-simple-list">
-                        <!-- Add Javascript to open up Help info in a separate window.
-                             This does the same thing as target="_blank", but is valid for XHTML 1.0 -->
-                        <a class="list-group-item" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
-                            <xsl:attribute name="href">
-                                <xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Getting+Started+with+IDEALS</xsl:text>
-                            </xsl:attribute>
-                            <i18n:text>xmlui.dri2xhtml.structural.help</i18n:text>
-                        </a>
-                        <a class="list-group-item">
-                            <xsl:attribute name="href">
-                                <xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/IDEALS+Resources+and+Information</xsl:text>
-                            </xsl:attribute>
-                            <i18n:text>xmlui.dri2xhtml.structural.about</i18n:text>
-                        </a>
-                        <a class="list-group-item">
-                            <xsl:attribute name="href">
-                                <xsl:value-of select="/*/dri:meta/dri:pageMeta/dri:metadata[@qualifier='contactURL']" />
-                            </xsl:attribute>
-                            <i18n:text>xmlui.dri2xhtml.structural.contact-link</i18n:text>
-                        </a>
-                    </div>
-                </div>
+                <!--<h1 class="ds-option-set-head">Information</h1>-->
+                <!--<div id="aspect_artifactbrowser_Navigation_list_ideals_information" class="ds-option-set">-->
+                    <!--<div class="list-group ds-simple-list">-->
+                        <!--&lt;!&ndash; Add Javascript to open up Help info in a separate window.-->
+                             <!--This does the same thing as target="_blank", but is valid for XHTML 1.0 &ndash;&gt;-->
+                        <!--<a class="list-group-item" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">-->
+                            <!--<xsl:attribute name="href">-->
+                                <!--<xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Getting+Started+with+IDEALS</xsl:text>-->
+                            <!--</xsl:attribute>-->
+                            <!--<i18n:text>xmlui.dri2xhtml.structural.help</i18n:text>-->
+                        <!--</a>-->
+                        <!--<a class="list-group-item">-->
+                            <!--<xsl:attribute name="href">-->
+                                <!--<xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/IDEALS+Resources+and+Information</xsl:text>-->
+                            <!--</xsl:attribute>-->
+                            <!--<i18n:text>xmlui.dri2xhtml.structural.about</i18n:text>-->
+                        <!--</a>-->
+                        <!--<a class="list-group-item">-->
+                            <!--<xsl:attribute name="href">-->
+                                <!--<xsl:value-of select="/*/dri:meta/dri:pageMeta/dri:metadata[@qualifier='contactURL']" />-->
+                            <!--</xsl:attribute>-->
+                            <!--<i18n:text>xmlui.dri2xhtml.structural.contact-link</i18n:text>-->
+                        <!--</a>-->
+                    <!--</div>-->
+                <!--</div>-->
                 <!-- End custom navigation INFORMATION block -->
 
             </div>
@@ -109,6 +109,18 @@
         them. Each list underneath the matched one becomes an option-set and is handled by the appropriate
         list templates. -->
     <xsl:template match="dri:options/dri:list[dri:list]" priority="3">
+        <xsl:apply-templates select="dri:head"/>
+        <div>
+            <xsl:call-template name="standardAttributes">
+                <xsl:with-param name="class">ds-option-set</xsl:with-param>
+            </xsl:call-template>
+            <div class="ds-options-list">
+                <xsl:apply-templates select="*[not(name()='head')]" mode="nested"/>
+            </div>
+        </div>
+    </xsl:template>
+
+    <xsl:template match="dri:options/dri:list[dri:item]" priority="3">
         <xsl:apply-templates select="dri:head"/>
         <div>
             <xsl:call-template name="standardAttributes">

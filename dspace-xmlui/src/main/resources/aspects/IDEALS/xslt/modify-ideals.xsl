@@ -82,32 +82,32 @@
 
     <!-- Reorder the global "My Account" navigation options in sidebar-->
     <xsl:template match="dri:list[@id='aspect.viewArtifacts.Navigation.list.account']">
-        <xsl:choose>
-            <!--Only reorder options if a user is logged into the system-->
-            <xsl:when test="/dri:document/dri:meta/dri:userMeta[@authenticated='yes']">
-                <!--Re-Order: My IDEALS, Submit new item, My Profile, Logout -->
-                <xsl:copy>
-                    <xsl:copy-of select="@*"/>
-                    <!--Display Heading-->
-                    <xsl:apply-templates select="dri:head"/>
-                    <!--Display My IDEALS (Submissions)-->
-                    <xsl:apply-templates select="dri:item[dri:xref/i18n:text/text()='xmlui.Submission.Navigation.submissions']"/>
-                    <!--Display Submit new Item -->
-                    <xsl:apply-templates select="dri:item[dri:xref/i18n:text/text()='xmlui.Submission.Navigation.startNewSubmission']"/>
-                    <!--Display My Profile-->
-                    <xsl:apply-templates select="dri:item[dri:xref/i18n:translate/i18n:text/text()='xmlui.EPerson.Navigation.profile']"/>
-                    <!--Display Logout-->
-                    <xsl:apply-templates select="dri:item[dri:xref/i18n:text/text()='xmlui.EPerson.Navigation.logout']"/>
-                </xsl:copy>
-            </xsl:when>
-            <!--Otherwise, just display options in normal order-->
-            <xsl:otherwise>
-                <xsl:copy>
-                    <xsl:copy-of select="@*"/>
-                    <xsl:apply-templates/>
-                </xsl:copy>
-            </xsl:otherwise>
-        </xsl:choose>
+        <!--<xsl:choose>-->
+            <!--&lt;!&ndash;Only reorder options if a user is logged into the system&ndash;&gt;-->
+            <!--<xsl:when test="/dri:document/dri:meta/dri:userMeta[@authenticated='yes']">-->
+                <!--&lt;!&ndash;Re-Order: My IDEALS, Submit new item, My Profile, Logout &ndash;&gt;-->
+                <!--<xsl:copy>-->
+                    <!--<xsl:copy-of select="@*"/>-->
+                    <!--&lt;!&ndash;Display Heading&ndash;&gt;-->
+                    <!--<xsl:apply-templates select="dri:head"/>-->
+                    <!--&lt;!&ndash;Display My IDEALS (Submissions)&ndash;&gt;-->
+                    <!--<xsl:apply-templates select="dri:item[dri:xref/i18n:text/text()='xmlui.Submission.Navigation.submissions']"/>-->
+                    <!--&lt;!&ndash;Display Submit new Item &ndash;&gt;-->
+                    <!--<xsl:apply-templates select="dri:item[dri:xref/i18n:text/text()='xmlui.Submission.Navigation.startNewSubmission']"/>-->
+                    <!--&lt;!&ndash;Display My Profile&ndash;&gt;-->
+                    <!--<xsl:apply-templates select="dri:item[dri:xref/i18n:translate/i18n:text/text()='xmlui.EPerson.Navigation.profile']"/>-->
+                    <!--&lt;!&ndash;Display Logout&ndash;&gt;-->
+                    <!--<xsl:apply-templates select="dri:item[dri:xref/i18n:text/text()='xmlui.EPerson.Navigation.logout']"/>-->
+                <!--</xsl:copy>-->
+            <!--</xsl:when>-->
+            <!--&lt;!&ndash;Otherwise, just display options in normal order&ndash;&gt;-->
+            <!--<xsl:otherwise>-->
+                <!--<xsl:copy>-->
+                    <!--<xsl:copy-of select="@*"/>-->
+                    <!--<xsl:apply-templates/>-->
+                <!--</xsl:copy>-->
+            <!--</xsl:otherwise>-->
+        <!--</xsl:choose>-->
     </xsl:template>
 
 
