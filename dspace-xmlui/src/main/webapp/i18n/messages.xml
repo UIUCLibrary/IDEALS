@@ -921,6 +921,7 @@
     <message key="xmlui.Submission.submit.AccessStep.table_policies">Policies List</message>
     <message key="xmlui.Submission.submit.AccessStep.private_settings">Private Item</message>
     <message key="xmlui.Submission.submit.AccessStep.private_settings_help">If selected, the item won't be searchable</message>
+    <message key="xmlui.Submission.submit.AccessStep.private_settings_label">Private</message>
     <message key="xmlui.Submission.submit.AccessStep.column0">Name</message>
     <message key="xmlui.Submission.submit.AccessStep.column1">Action</message>
     <message key="xmlui.Submission.submit.AccessStep.column2">Group</message>
@@ -1174,11 +1175,13 @@
     <message key="xmlui.administrative.Navigation.administrative_registries">Registries</message>
     <message key="xmlui.administrative.Navigation.administrative_metadata">Metadata</message>
     <message key="xmlui.administrative.Navigation.administrative_format">Format</message>
+    <message key="xmlui.administrative.Navigation.administrative_content">Content Administration</message>
     <message key="xmlui.administrative.Navigation.administrative_items">Items</message>
     <message key="xmlui.administrative.Navigation.administrative_withdrawn">Withdrawn Items</message>
     <message key="xmlui.administrative.Navigation.administrative_private">Private Items</message>
     <message key="xmlui.administrative.Navigation.administrative_control_panel">Control Panel</message>
     <message key="xmlui.administrative.Navigation.statistics">Statistics</message>
+    <message key="xmlui.administrative.Navigation.administrative_batch_import">Batch Import (ZIP)</message>
     <message key="xmlui.administrative.Navigation.administrative_import_metadata">Import Metadata</message>
     <message key="xmlui.administrative.Navigation.administrative_curation">Curation Tasks</message>
 
@@ -2282,6 +2285,7 @@
     <message key="xmlui.statistics.visits.bitstreams">File Visits</message>
     <message key="xmlui.statistics.Navigation.title">Statistics</message>
     <message key="xmlui.statistics.Navigation.usage.view">View Usage Statistics</message>
+    <message key="xmlui.statistics.Navigation.usage-Elasticsearch.view">View Usage Statistics</message>
     <message key="xmlui.statistics.Navigation.search.view">View Search Statistics</message>
     <message key="xmlui.statistics.Navigation.workflow.view">View Workflow Statistics</message>
     <message key="xmlui.statistics.trail">Statistics</message>
@@ -2430,6 +2434,7 @@
     <message key="xmlui.dri2xhtml.METS-1.0.item-files-view">View</message>
     <message key="xmlui.dri2xhtml.METS-1.0.item-files-description">Description</message>
     <message key="xmlui.dri2xhtml.METS-1.0.item-files-viewOpen">View/<wbr/>Open</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-files-access-rights">Read access available for</message>
     <message key="xmlui.dri2xhtml.METS-1.0.item-no-files">There are no files associated with this item.</message>
 
     <!-- IDEALS Additions -->
@@ -2626,6 +2631,7 @@
     <!-- params are: start, end, total-count, search-value -->
     <message key="xmlui.ChoiceLookupTransformer.results">Results @1@ to @2@ of @3@ for "@4@"</message>
     <message key="xmlui.ChoiceLookupTransformer.fail">Failed to load choice data: </message>
+  <message key="xmlui.ChoiceLookupTransformer.lookup">Lookup</message>
 
     <!-- Choice Lookup - sample config for dc.publisher field -->
     <message key="xmlui.ChoiceLookupTransformer.field.dc_publisher.help">Name of Publisher</message>
