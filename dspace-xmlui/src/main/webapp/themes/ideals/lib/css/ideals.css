@@ -2743,6 +2743,12 @@ button {
   -ms-interpolation-mode: bicubic;
 }
 
+/**
+ *
+ * ideals-fonts.scss
+ *
+ * Theme Fonts
+ */
 body {
   font: 13px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
   line-height: 153.9%;
@@ -2773,7 +2779,7 @@ h5, h6 {
 
 /**
  *
- * style.css
+ * ideals-main.scss
  *
  * Primary Theme Styles
  */
@@ -4776,6 +4782,12 @@ span.ds-dc_contributor_author-authority {
   height: auto;
 }
 
+/**
+ *
+ * ideals-collection-tree.scss
+ *
+ * Collection-tree Styles
+ */
 /*** BODY: community page that lists all communities ***/
 /*** Styles for expandable tree on collection page ***/
 /*** The tree is implemented by mktree.js		   ***/
@@ -4842,6 +4854,12 @@ ul.mktree a:hover {
 }
 
 /*** END BODY: community page that lists all communities ***/
+/**
+ *
+ * ideals-submit-form.scss
+ *
+ * Form-submit Styles
+ */
 #submit_describe_accordion h3.ui-state-active {
   font-weight: bold;
   color: white;
