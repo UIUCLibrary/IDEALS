@@ -31,128 +31,10 @@
 
     <xsl:output indent="yes"/>
 
-    <!--
-        The template to handle dri:options. Since it contains only dri:list tags (which carry the actual
-        information), the only things than need to be done is creating the ds-options div and applying
-        the templates inside it.
-
-        In fact, the only bit of real work this template does is add the search box, which has to be
-        handled specially in that it is not actually included in the options div, and is instead built
-        from metadata available under pageMeta.
-    -->
-    <!-- TODO: figure out why i18n tags break the go button -->
-    <!--<xsl:template match="dri:options">-->
-        <!--<div id="ds-options-wrapper">-->
-            <!--<div id="ds-options">-->
-                <!--<xsl:if test="not(contains(/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='request'][@qualifier='URI'], 'discover'))">-->
-                    <!--<h1 id="ds-search-option-head" class="ds-option-set-head">-->
-                        <!--<i18n:text>xmlui.dri2xhtml.structural.search</i18n:text>-->
-                    <!--</h1>-->
-                    <!--<div id="ds-search-option" class="ds-option-set">-->
-                        <!--&lt;!&ndash; The form, complete with a text box and a button, all built from attributes referenced-->
-                     <!--from under pageMeta. &ndash;&gt;-->
-                        <!--<form id="ds-search-form" method="post">-->
-                            <!--<xsl:attribute name="action">-->
-                                <!--<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath']"/>-->
-                                <!--<xsl:value-of-->
-                                        <!--select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='simpleURL']"/>-->
-                            <!--</xsl:attribute>-->
-                            <!--<fieldset>-->
-                                <!--<input class="ds-text-field " type="text">-->
-                                    <!--<xsl:attribute name="name">-->
-                                        <!--<xsl:value-of-->
-                                                <!--select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='queryField']"/>-->
-                                    <!--</xsl:attribute>-->
-                                <!--</input>-->
-                                <!--<input class="ds-button-field " name="submit" type="submit" i18n:attr="value"-->
-                                       <!--value="xmlui.general.go">-->
-                                    <!--<xsl:attribute name="onclick">-->
-                                    <!--<xsl:text>-->
-                                        <!--var radio = document.getElementById(&quot;ds-search-form-scope-container&quot;);-->
-                                        <!--if (radio != undefined &amp;&amp; radio.checked)-->
-                                        <!--{-->
-                                        <!--var form = document.getElementById(&quot;ds-search-form&quot;);-->
-                                        <!--form.action=-->
-                                    <!--</xsl:text>-->
-                                        <!--<xsl:text>&quot;</xsl:text>-->
-                                        <!--<xsl:value-of-->
-                                                <!--select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath']"/>-->
-                                        <!--<xsl:text>/handle/&quot; + radio.value + &quot;</xsl:text>-->
-                                        <!--<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='simpleURL']"/>-->
-                                        <!--<xsl:text>&quot; ; </xsl:text>-->
-                                    <!--<xsl:text>-->
-                                        <!--}-->
-                                    <!--</xsl:text>-->
-                                    <!--</xsl:attribute>-->
-                                <!--</input>-->
-                                <!--<xsl:if test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='focus'][@qualifier='container']">-->
-                                    <!--<label>-->
-                                        <!--<input id="ds-search-form-scope-all" type="radio" name="scope" value=""-->
-                                               <!--checked="checked"/>-->
-                                        <!--<i18n:text>xmlui.dri2xhtml.structural.search</i18n:text>-->
-                                    <!--</label>-->
-                                    <!--<br/>-->
-                                    <!--<label>-->
-                                        <!--<input id="ds-search-form-scope-container" type="radio" name="scope">-->
-                                            <!--<xsl:attribute name="value">-->
-                                                <!--<xsl:value-of-->
-                                                        <!--select="substring-after(/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='focus'][@qualifier='container'],':')"/>-->
-                                            <!--</xsl:attribute>-->
-                                        <!--</input>-->
-                                        <!--<xsl:choose>-->
-                                            <!--<xsl:when-->
-                                                    <!--test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='focus'][@qualifier='containerType']/text() = 'type:community'">-->
-                                                <!--<i18n:text>xmlui.dri2xhtml.structural.search-in-community</i18n:text>-->
-                                            <!--</xsl:when>-->
-                                            <!--<xsl:otherwise>-->
-                                                <!--<i18n:text>xmlui.dri2xhtml.structural.search-in-collection</i18n:text>-->
-                                            <!--</xsl:otherwise>-->
-
-                                        <!--</xsl:choose>-->
-                                    <!--</label>-->
-                                <!--</xsl:if>-->
-                            <!--</fieldset>-->
-                        <!--</form>-->
-                        <!--&lt;!&ndash;Only add if the advanced search url is different from the simple search&ndash;&gt;-->
-                        <!--<xsl:if test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='advancedURL'] != /dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='simpleURL']">-->
-                            <!--&lt;!&ndash; The "Advanced search" link, to be perched underneath the search box &ndash;&gt;-->
-                            <!--<a>-->
-                                <!--<xsl:attribute name="href">-->
-                                    <!--<xsl:value-of-->
-                                            <!--select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='advancedURL']"/>-->
-                                <!--</xsl:attribute>-->
-                                <!--<i18n:text>xmlui.dri2xhtml.structural.search-advanced</i18n:text>-->
-                            <!--</a>-->
-                        <!--</xsl:if>-->
-                    <!--</div>-->
-
-                <!--</xsl:if>-->
-                <!--&lt;!&ndash; Once the search box is built, the other parts of the options are added &ndash;&gt;-->
-                <!--<xsl:apply-templates/>-->
-
-                <!--&lt;!&ndash; DS-984 Add RSS Links to Options Box &ndash;&gt;-->
-                <!--<xsl:if test="count(/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='feed']) != 0">-->
-                    <!--<h1 id="ds-feed-option-head" class="ds-option-set-head">-->
-                        <!--<i18n:text>xmlui.feed.header</i18n:text>-->
-                    <!--</h1>-->
-                    <!--<div id="ds-feed-option" class="ds-option-set">-->
-                        <!--<ul>-->
-                            <!--<xsl:call-template name="addRSSLinks"/>-->
-                        <!--</ul>-->
-                    <!--</div>-->
-                <!--</xsl:if>-->
-
-
-            <!--</div>-->
-        <!--</div>-->
-    <!--</xsl:template>-->
 
     <xsl:template match="dri:options">
         <div id="ds-options-wrapper">
             <div id="ds-options">
-
-                <!-- Removed search form as found in structural.xsl.  -->
-                <!-- Removed  'Search Dspace' text found above search form in Options div. -->
 
                 <xsl:apply-templates/>
 
@@ -183,38 +65,6 @@
                     </div>
                 </div>
                 <!-- End custom navigation INFORMATION block -->
-
-                <!-- Custom code for IDEALs to supply ACCESS RESTRICTIONS block in left navigation -->
-                <!--<h1 class="ds-option-set-head">Access Key</h1>-->
-                <!--<div id="aspect_artifactbrowser_Navigation_list_ideals_access_restrictions" class="ds-option-set">-->
-                    <!--<ul class="list-group ds-simple-list">-->
-                        <!--<li class="list-group-item">-->
-                            <!--<div>-->
-                                <!--<img src="{$theme-path}/images/lock.png" alt="Closed Access" title="Closed Access"/>-->
-                            <!--</div>-->
-                            <!--<a onclick="window.open(this.href); return false;"-->
-                               <!--onkeypress="window.open(this.href); return false;">-->
-                                <!--<xsl:attribute name="href">-->
-                                    <!--<xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Access+Restriction+Policy</xsl:text>-->
-                                <!--</xsl:attribute>-->
-                                <!--<i18n:text>xmlui.dri2xhtml.structural.access-closed</i18n:text>-->
-                            <!--</a>-->
-                        <!--</li>-->
-
-                        <!--<li class="list-group-item">-->
-                            <!--<div>-->
-                                <!--<img src="{$theme-path}/images/lock-illinois.png" alt="Campus Access" title="Campus Access"/>-->
-                            <!--</div>-->
-                            <!--<a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">-->
-                                <!--<xsl:attribute name="href">-->
-                                    <!--<xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Access+Restriction+Policy</xsl:text>-->
-                                <!--</xsl:attribute>-->
-                                <!--<i18n:text>xmlui.dri2xhtml.structural.access-campus</i18n:text>-->
-                            <!--</a>-->
-                        <!--</li>-->
-                    <!--</ul>-->
-                <!--</div>-->
-                 <!--End custom navigation ACCESS RESTRICTIONS block -->
 
             </div>
         </div>
