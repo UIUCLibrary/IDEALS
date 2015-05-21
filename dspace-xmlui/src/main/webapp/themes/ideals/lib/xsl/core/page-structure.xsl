@@ -886,102 +886,417 @@
     <!-- Like the header, the footer contains various miscellaneous text, links, and image placeholders -->
     <xsl:template name="buildFooter">
         <footer class="ds-footer" role="contentinfo">
-
-            <div id="ds-footer" class="container">
-
+            <div class="container footer-big">
                 <div class="row">
 
-                    <div id="ds-footer-links" class="col-xs-12 col-sm-7">
-                        <a>
-                            <xsl:attribute name="href">
-                                <xsl:value-of
-                                        select="/*/dri:meta/dri:pageMeta/dri:metadata[@qualifier='contactURL']"
-                                        />
-                            </xsl:attribute>
-                            <i18n:text>xmlui.dri2xhtml.structural.contact-link</i18n:text>
-                        </a>
-                        <xsl:text> | </xsl:text>
-                        <a>
-                            <xsl:attribute name="href">
-                                <xsl:value-of
-                                        select="/*/dri:meta/dri:pageMeta/dri:metadata[@qualifier='feedbackURL']"
-                                        />
-                            </xsl:attribute>
-                            <i18n:text>xmlui.dri2xhtml.structural.feedback-link</i18n:text>
-                        </a>
-                        <xsl:text> | </xsl:text>
-                        <a>
-                            <xsl:attribute name="href">
-                                <xsl:text>http://www.library.illinois.edu</xsl:text>
-                            </xsl:attribute>
-                            <xsl:text>University Library</xsl:text>
-                        </a>
-                        <xsl:text> | </xsl:text>
-                        <a>
-                            <xsl:attribute name="href">
-                                <xsl:text>http://www.cites.illinois.edu/</xsl:text>
-                            </xsl:attribute>
-                            <xsl:text>CITES</xsl:text>
-                        </a>
-                        <xsl:text> | </xsl:text>
-                        <a>
-                            <xsl:attribute name="href">
-                                <xsl:text>http://www.provost.illinois.edu/</xsl:text>
-                            </xsl:attribute>
-                            <xsl:text>Office of the Provost</xsl:text>
-                        </a>
-                        <p>Copyright &#169; 2005-2013 <a>
+                    <div class="col-xs-6 col-sm-4">
+                        <h3><i18n:text>xmlui.dri2xhtml.structural.footer-contact-head</i18n:text></h3>
+                        <ul>
+                            <li>
+                                <a>
+                                    <xsl:attribute name="href">
+                                        <xsl:value-of
+                                                select="/*/dri:meta/dri:pageMeta/dri:metadata[@qualifier='contactURL']" />
+                                    </xsl:attribute>
+                                    <i18n:text>xmlui.dri2xhtml.structural.contact-link</i18n:text>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <xsl:attribute name="href">
+                                        <xsl:value-of
+                                                select="/*/dri:meta/dri:pageMeta/dri:metadata[@qualifier='feedbackURL']"
+                                                />
+                                    </xsl:attribute>
+                                    <i18n:text>xmlui.dri2xhtml.structural.feedback-link</i18n:text>
+                                </a>
+                            </li>
+
+                        </ul>
+                        <ul>
+                            <li>
+                                <a onclick="window.open(this.href); return false;"
+                                        onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>http://www.library.illinois.edu</xsl:text>
+                                    </xsl:attribute>
+                                    <xsl:text>University Library</xsl:text>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a onclick="window.open(this.href); return false;"
+                                        onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>http://www.cites.illinois.edu/</xsl:text>
+                                    </xsl:attribute>
+                                    <xsl:text>CITES</xsl:text>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a onclick="window.open(this.href); return false;"
+                                        onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>http://www.provost.illinois.edu/</xsl:text>
+                                    </xsl:attribute>
+                                    <xsl:text>Office of the Provost</xsl:text>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                        <ul>
+                            <li>
+                                <p>Most icons borrowed from: <a onclick="window.open(this.href); return false;"
+                                        onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>http://www.famfamfam.com/</xsl:text>
+                                    </xsl:attribute>
+                                    <xsl:text>FamFamFam</xsl:text>
+                                </a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>Powered by <a onclick="window.open(this.href); return false;"
+                                        onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>http://www.dspace.org/</xsl:text>
+                                    </xsl:attribute>
+                                    <xsl:text>DSpace</xsl:text>
+                                </a></p>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="col-xs-6 col-sm-4">
+                        <h3><i18n:text>xmlui.dri2xhtml.structural.footer-resources-head</i18n:text></h3>
+                        <ul>
+                            <!-- Add Javascript to open up Help info in a separate window.
+                            This does the same thing as target="_blank", but is valid for XHTML 1.0 -->
+
+                            <li>
+                                <a onclick="window.open(this.href); return false;"
+                                        onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/IDEALS+Resources+and+Information</xsl:text>
+                                    </xsl:attribute>
+                                    <i18n:text>xmlui.dri2xhtml.structural.footer-resources-info</i18n:text>
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="window.open(this.href); return false;"
+                                        onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Getting+Started+with+IDEALS</xsl:text>
+                                    </xsl:attribute>
+                                    <i18n:text>xmlui.dri2xhtml.structural.footer-resources-getting-started</i18n:text>
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="window.open(this.href); return false;"
+                                        onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Depositor+FAQs</xsl:text>
+                                    </xsl:attribute>
+                                    <i18n:text>xmlui.dri2xhtml.structural.footer-resources-depositor-faqs</i18n:text>
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="window.open(this.href); return false;"
+                                        onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Visitor+FAQs</xsl:text>
+                                    </xsl:attribute>
+                                    <i18n:text>xmlui.dri2xhtml.structural.footer-resources-visitor-faqs</i18n:text>
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="window.open(this.href); return false;"
+                                        onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Support+for+Advanced+Users+of+IDEALS</xsl:text>
+                                    </xsl:attribute>
+                                    <i18n:text>xmlui.dri2xhtml.structural.footer-resources-advanced</i18n:text>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <h3><i18n:text>xmlui.dri2xhtml.structural.footer-key-head</i18n:text></h3>
+                        <ul class="access-key">
+                            <li>
+                                <div class="icon-wrap">
+                                    <img src="{$theme-path}/images/lock.png" alt="Closed Access" title="Closed Access"/>
+                                </div>
+                                <a onclick="window.open(this.href); return false;"
+                                        onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Access+Restriction+Policy</xsl:text>
+                                    </xsl:attribute>
+                                    <i18n:text>xmlui.dri2xhtml.structural.access-closed</i18n:text>
+                                </a>
+                            </li>
+
+                            <li>
+                                <div class="icon-wrap">
+                                    <img src="{$theme-path}/images/lock-illinois.png" alt="Campus Access" title="Campus Access"/>
+                                </div>
+                                <a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Access+Restriction+Policy</xsl:text>
+                                    </xsl:attribute>
+                                    <i18n:text>xmlui.dri2xhtml.structural.access-campus</i18n:text>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <!-- Add the extra clearfix for only the required viewport -->
+                    <div class="clearfix visible-xs-block"></div>
+
+                    <div class="col-xs-6 col-sm-4">
+                        <h3><i18n:text>xmlui.dri2xhtml.structural.footer-policies-head</i18n:text></h3>
+                        <ul>
+                            <li>
+                                <a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Collection+Policy</xsl:text>
+                                    </xsl:attribute>
+                                    <xsl:text>Collection Policy</xsl:text>
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Copyright+and+Intellectual+Property+Policy</xsl:text>
+                                    </xsl:attribute>
+                                    <xsl:text>Copyright and Intellectual Property Policy</xsl:text>
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Deposit+Agreement+-+Non-Exclusive+Distribution+and+Preservation+License</xsl:text>
+                                    </xsl:attribute>
+                                    <xsl:text>Deposit Agreement - Non-Exclusive Distribution and Preservation License</xsl:text>
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Digital+Preservation+Policy</xsl:text>
+                                    </xsl:attribute>
+                                    <xsl:text>Digital Preservation Policy</xsl:text>
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Digital+Preservation+Support+Policy</xsl:text>
+                                    </xsl:attribute>
+                                    <xsl:text>Digital Preservation Support Policy</xsl:text>
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Access+and+Use+Policy</xsl:text>
+                                    </xsl:attribute>
+                                    <xsl:text>Access and Use Policy</xsl:text>
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Access+Restriction+Policy</xsl:text>
+                                    </xsl:attribute>
+                                    <xsl:text>Access Restriction Policy</xsl:text>
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Withdrawal+Policy</xsl:text>
+                                    </xsl:attribute>
+                                    <xsl:text>Withdrawal Policy</xsl:text>
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Metadata+Policy</xsl:text>
+                                    </xsl:attribute>
+                                    <xsl:text>Metadata Policy</xsl:text>
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Controlled+Vocabularies+and+Standards+in+Use</xsl:text>
+                                    </xsl:attribute>
+                                    <xsl:text>Controlled Vocabularies and Standards in Use</xsl:text>
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Service+Level+Definition</xsl:text>
+                                    </xsl:attribute>
+                                    <xsl:text>Service Level Definition</xsl:text>
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Community+Policy</xsl:text>
+                                    </xsl:attribute>
+                                    <xsl:text>Community Policy</xsl:text>
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Individual+Depositor+Policy</xsl:text>
+                                    </xsl:attribute>
+                                    <xsl:text>Individual Depositor Policy</xsl:text>
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>https://wiki.cites.illinois.edu/wiki/display/IDEALS/Dissertations+and+Theses</xsl:text>
+                                    </xsl:attribute>
+                                    <xsl:text>Policies Governing Dissertations and Theses</xsl:text>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="container footer-small">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-8">
+                        <p>&#169; 2005-2015 <a>
                             <xsl:attribute name="href">
                                 <xsl:text>http://illinois.edu</xsl:text>
                             </xsl:attribute>
                             <xsl:text>University of Illinois</xsl:text>
-                        </a>
+                        </a>. All rights reserved.
                         </p>
                     </div>
-                    <div id="ds-footer-right" class="col-xs-12 col-sm-5">
-                        <a>
-                            <xsl:attribute name="href">
-                                <xsl:text>http://validator.w3.org/check?uri=referer</xsl:text>
-                            </xsl:attribute>
-                            <xsl:text>W3C XHTML 1.0</xsl:text>
-                        </a>
-                        <xsl:text> | </xsl:text>
-                        <a>
-                            <xsl:attribute name="href">
-                                <xsl:text>http://jigsaw.w3.org/css-validator/</xsl:text>
-                            </xsl:attribute>
-                            <xsl:text>W3C CSS</xsl:text>
-                        </a>
-                        <xsl:text> | </xsl:text>
-                        <a>
-                            <xsl:attribute name="href">
-                                <xsl:text>http://www.dspace.org/</xsl:text>
-                            </xsl:attribute>
-                            <xsl:text>DSpace</xsl:text>
-                        </a>
-                        <p>Most icons borrowed from: <a>
-                            <xsl:attribute name="href">
-                                <xsl:text>http://www.famfamfam.com/</xsl:text>
-                            </xsl:attribute>
-                            <xsl:text>FamFamFam</xsl:text>
-                        </a>
-                        </p>
+                    <div class="col-xs-6 col-md-4">
+                        <div class="hidden">
+                            <a class="hidden">
+                                <xsl:attribute name="href">
+                                    <xsl:value-of
+                                            select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+                                    <xsl:text>/htmlmap</xsl:text>
+                                </xsl:attribute>
+                                <xsl:text>&#160;</xsl:text>
+                            </a>
+                        </div>
                     </div>
                 </div>
-
-                <!--Invisible link to HTML sitemap (for search engines) -->
-                <div class="hidden">
-                    <a class="hidden">
-                        <xsl:attribute name="href">
-                            <xsl:value-of
-                                    select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
-                            <xsl:text>/htmlmap</xsl:text>
-                        </xsl:attribute>
-                        <xsl:text>&#160;</xsl:text>
-                    </a>
-                </div>
-
             </div>
+
+            <!--<div id="ds-footer" class="container">-->
+
+                <!--<div class="row">-->
+
+                    <!--<div id="ds-footer-links" class="col-xs-12 col-sm-7">-->
+                        <!--<a>-->
+                            <!--<xsl:attribute name="href">-->
+                                <!--<xsl:value-of-->
+                                        <!--select="/*/dri:meta/dri:pageMeta/dri:metadata[@qualifier='contactURL']"-->
+                                        <!--/>-->
+                            <!--</xsl:attribute>-->
+                            <!--<i18n:text>xmlui.dri2xhtml.structural.contact-link</i18n:text>-->
+                        <!--</a>-->
+                        <!--<xsl:text> | </xsl:text>-->
+                        <!--<a>-->
+                            <!--<xsl:attribute name="href">-->
+                                <!--<xsl:value-of-->
+                                        <!--select="/*/dri:meta/dri:pageMeta/dri:metadata[@qualifier='feedbackURL']"-->
+                                        <!--/>-->
+                            <!--</xsl:attribute>-->
+                            <!--<i18n:text>xmlui.dri2xhtml.structural.feedback-link</i18n:text>-->
+                        <!--</a>-->
+                        <!--<xsl:text> | </xsl:text>-->
+                        <!--<a>-->
+                            <!--<xsl:attribute name="href">-->
+                                <!--<xsl:text>http://www.library.illinois.edu</xsl:text>-->
+                            <!--</xsl:attribute>-->
+                            <!--<xsl:text>University Library</xsl:text>-->
+                        <!--</a>-->
+                        <!--<xsl:text> | </xsl:text>-->
+                        <!--<a>-->
+                            <!--<xsl:attribute name="href">-->
+                                <!--<xsl:text>http://www.cites.illinois.edu/</xsl:text>-->
+                            <!--</xsl:attribute>-->
+                            <!--<xsl:text>CITES</xsl:text>-->
+                        <!--</a>-->
+                        <!--<xsl:text> | </xsl:text>-->
+                        <!--<a>-->
+                            <!--<xsl:attribute name="href">-->
+                                <!--<xsl:text>http://www.provost.illinois.edu/</xsl:text>-->
+                            <!--</xsl:attribute>-->
+                            <!--<xsl:text>Office of the Provost</xsl:text>-->
+                        <!--</a>-->
+                        <!--<p>Copyright &#169; 2005-2013 <a>-->
+                            <!--<xsl:attribute name="href">-->
+                                <!--<xsl:text>http://illinois.edu</xsl:text>-->
+                            <!--</xsl:attribute>-->
+                            <!--<xsl:text>University of Illinois</xsl:text>-->
+                        <!--</a>-->
+                        <!--</p>-->
+                    <!--</div>-->
+                    <!--<div id="ds-footer-right" class="col-xs-12 col-sm-5">-->
+                        <!--<a>-->
+                            <!--<xsl:attribute name="href">-->
+                                <!--<xsl:text>http://validator.w3.org/check?uri=referer</xsl:text>-->
+                            <!--</xsl:attribute>-->
+                            <!--<xsl:text>W3C XHTML 1.0</xsl:text>-->
+                        <!--</a>-->
+                        <!--<xsl:text> | </xsl:text>-->
+                        <!--<a>-->
+                            <!--<xsl:attribute name="href">-->
+                                <!--<xsl:text>http://jigsaw.w3.org/css-validator/</xsl:text>-->
+                            <!--</xsl:attribute>-->
+                            <!--<xsl:text>W3C CSS</xsl:text>-->
+                        <!--</a>-->
+                        <!--<xsl:text> | </xsl:text>-->
+                        <!--<a>-->
+                            <!--<xsl:attribute name="href">-->
+                                <!--<xsl:text>http://www.dspace.org/</xsl:text>-->
+                            <!--</xsl:attribute>-->
+                            <!--<xsl:text>DSpace</xsl:text>-->
+                        <!--</a>-->
+                        <!--<p>Most icons borrowed from: <a>-->
+                            <!--<xsl:attribute name="href">-->
+                                <!--<xsl:text>http://www.famfamfam.com/</xsl:text>-->
+                            <!--</xsl:attribute>-->
+                            <!--<xsl:text>FamFamFam</xsl:text>-->
+                        <!--</a>-->
+                        <!--</p>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--&lt;!&ndash;Invisible link to HTML sitemap (for search engines) &ndash;&gt;-->
+                <!--<div class="hidden">-->
+                    <!--<a class="hidden">-->
+                        <!--<xsl:attribute name="href">-->
+                            <!--<xsl:value-of-->
+                                    <!--select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>-->
+                            <!--<xsl:text>/htmlmap</xsl:text>-->
+                        <!--</xsl:attribute>-->
+                        <!--<xsl:text>&#160;</xsl:text>-->
+                    <!--</a>-->
+                <!--</div>-->
+
+            <!--</div>-->
         </footer>
     </xsl:template>
 

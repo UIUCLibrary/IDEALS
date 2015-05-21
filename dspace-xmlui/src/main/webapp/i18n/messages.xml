@@ -2403,6 +2403,19 @@
     <message key="xmlui.dri2xhtml.structural.access-closed">Private / Closed Access</message>
     <message key="xmlui.dri2xhtml.structural.access-campus">Limited Access: U. of I. Users Only</message>
 
+    <!--IDEALS Footer -->
+    <message key="xmlui.dri2xhtml.structural.footer-resources-head">Resources</message>
+    <message key="xmlui.dri2xhtml.structural.footer-resources-info">About IDEALS</message>
+    <message key="xmlui.dri2xhtml.structural.footer-resources-getting-started">Getting Started</message>
+    <message key="xmlui.dri2xhtml.structural.footer-resources-depositor-faqs">Depositor FAQs</message>
+    <message key="xmlui.dri2xhtml.structural.footer-resources-visitor-faqs">Visitor FAQs</message>
+    <message key="xmlui.dri2xhtml.structural.footer-resources-advanced">Advanced Users</message>
+
+    <message key="xmlui.dri2xhtml.structural.footer-policies-head">Policies</message>
+    <message key="xmlui.dri2xhtml.structural.footer-contact-head">Contact Info</message>
+    <message key="xmlui.dri2xhtml.structural.footer-about-head">About</message>
+    <message key="xmlui.dri2xhtml.structural.footer-key-head">Access Key</message>
+
     <!-- DS-METS-1.0-MODS.xsl -->
     <!-- DS-METS-1.0-DIM.xsl -->
     <!-- DS-METS-1.0-QDC.xsl -->

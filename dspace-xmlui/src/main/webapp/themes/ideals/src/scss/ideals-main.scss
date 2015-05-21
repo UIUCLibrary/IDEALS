@@ -172,6 +172,55 @@ img#ds-header-logo-sm {
 
 footer {
   margin-top: 40px;
+  padding: 35px 0 0;
+  background-color: $ideals-blue;
+  color: rgba(255,255,255,.7);
+}
+
+footer a,
+footer a:active,
+footer a:visited,
+footer a:focus {
+  color: #fff;
+}
+
+footer a:hover {
+  color: #a2a3a4;
+}
+
+footer ul {
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+
+footer li {
+  list-style: none;
+  text-indent: -1em;
+  margin-left: 1em;
+  margin-bottom: .3em;
+}
+
+footer ul.access-key li {
+  margin-bottom: 1em;
+}
+
+footer ul.access-key li a {
+  margin-left: 1em;
+}
+
+footer p {
+  text-shadow:  none;
+}
+
+footer .icon-wrap {
+  float: left;
+  margin-right: 10px;
+  clear: left;
+}
+
+footer .icon-wrap img {
+  width: 20px;
+  vertical-align: top;
 }
 
 #ds-footer {
