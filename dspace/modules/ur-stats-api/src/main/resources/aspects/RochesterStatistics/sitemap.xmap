@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+ The XMLUI Statistics Viewer
+-->
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+ <map:components>
+
+  <map:transformers>
+   <map:transformer name="StatisticsViewer" src="org.dspace.app.xmlui.aspect.rochesterStatistics.StatisticsViewer"/>
+   <map:transformer name="StatsReportViewer" src="org.dspace.app.xmlui.aspect.rochesterStatistics.StatsReportViewer"/>
+  </map:transformers>
+
+  <map:matchers default="wildcard">
+			<map:matcher name="HandleTypeMatcher" src="org.dspace.app.xmlui.aspect.general.HandleTypeMatcher"/>
+  </map:matchers>
+  
+</map:components>
+
+
+ <map:pipelines>
+  <map:pipeline>
+
+   <map:generate/>
+
+   <!-- Adds Statistics to Homepage -->
+   <map:match pattern="">
+        <map:transform type="StatisticsViewer"/>
+	    <map:serialize type="xml"/>
+   </map:match>
+
+   <map:match type="HandleTypeMatcher" pattern="community,collection,item">
+     <!-- Adds Statistics to Community, Collection, Item pages -->
+     <map:match pattern="handle/*/*">
+        <map:transform type="StatisticsViewer"/>
+        <map:serialize type="xml"/>
+     </map:match>
+     
+     <!-- Adds Statistics Report to Community, Collection-->
+     <map:match pattern="handle/*/*/report">
+          <map:transform type="StatsReportViewer"/>
+          <map:serialize type="xml"/>
+     </map:match>
+   </map:match>
+   
+   <!-- Not a URL we care about, so just pass it on. -->
+   <map:serialize type="xml"/>
+   
+  </map:pipeline>
+  
+ </map:pipelines>
+</map:sitemap>
