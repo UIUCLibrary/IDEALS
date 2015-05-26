@@ -203,28 +203,49 @@
 
             <!-- identifier.uri row -->
             <xsl:when test="$clause = 3 and (dim:field[@element='identifier' and @qualifier='uri' and descendant::text()])">
-                <div class="simple-item-view-other panel panel-primary center-block">
+                <div class="simple-item-view-other alert alert-success">
 
-                    <!--IDEALS: put URI in a box-->
-                    <!--URI is the unique identifier (e.g. hdl:2142/2)-->
-                    <xsl:variable name="uri" select="/mets:METS/@ID"/>
-                    <!--URL is the actual hdl.handle.net URL (e.g. http://hdl.handle.net/2142/2)-->
-                    <xsl:variable name="url">
-                        <xsl:if test="contains($uri, 'hdl:')">
-                            <xsl:text>http://hdl.handle.net/</xsl:text>
-                            <xsl:value-of select="substring-after($uri, 'hdl:')"/>
-                        </xsl:if>
-                    </xsl:variable>
+                    <span class="bold"><i18n:text>xmlui.dri2xhtml.METS-1.0.item-persistent-identifier</i18n:text>: </span>
 
-                    <div class="panel-heading text-center">Use <strong>this</strong> link to cite this item:</div>
-                    <div class="panel-body text-center">
+                    <span>
+
+                        <!--URI is the unique identifier (e.g. hdl:2142/2)-->
+                        <xsl:variable name="uri" select="/mets:METS/@ID"/>
+                        <!--URL is the actual hdl.handle.net URL (e.g. http://hdl.handle.net/2142/2)-->
+                        <xsl:variable name="url">
+                            <xsl:if test="contains($uri, 'hdl:')">
+                                <xsl:text>http://hdl.handle.net/</xsl:text>
+                                <xsl:value-of select="substring-after($uri, 'hdl:')"/>
+                            </xsl:if>
+                        </xsl:variable>
                         <a>
                             <xsl:attribute name="href">
                                 <xsl:value-of select="$url"/>
                             </xsl:attribute>
                             <xsl:value-of select="$url"/>
                         </a>
-                    </div>
+                    </span>
+
+                    <!--IDEALS: put URI in a box-->
+                    <!--URI is the unique identifier (e.g. hdl:2142/2)-->
+                    <!--<xsl:variable name="uri" select="/mets:METS/@ID"/>-->
+                    <!--&lt;!&ndash;URL is the actual hdl.handle.net URL (e.g. http://hdl.handle.net/2142/2)&ndash;&gt;-->
+                    <!--<xsl:variable name="url">-->
+                        <!--<xsl:if test="contains($uri, 'hdl:')">-->
+                            <!--<xsl:text>http://hdl.handle.net/</xsl:text>-->
+                            <!--<xsl:value-of select="substring-after($uri, 'hdl:')"/>-->
+                        <!--</xsl:if>-->
+                    <!--</xsl:variable>-->
+
+                    <!--<div class="panel-heading text-center">Use <strong>this</strong> link to cite this item:</div>-->
+                    <!--<div class="panel-body text-center">-->
+                        <!--<a>-->
+                            <!--<xsl:attribute name="href">-->
+                                <!--<xsl:value-of select="$url"/>-->
+                            <!--</xsl:attribute>-->
+                            <!--<xsl:value-of select="$url"/>-->
+                        <!--</a>-->
+                    <!--</div>-->
 
                     <!--<span class="bold"><i18n:text>xmlui.dri2xhtml.METS-1.0.item-uri</i18n:text>:</span>-->
                     <!--<span>-->
