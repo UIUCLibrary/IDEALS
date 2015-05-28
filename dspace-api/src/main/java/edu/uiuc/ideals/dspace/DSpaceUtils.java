@@ -195,7 +195,7 @@ public class DSpaceUtils
                 
                 if(collection!=null)
                 {
-                    prettyName += collection.getMetadata("name");
+                    prettyName += collection.getName();
                 }
                 else
                 {
@@ -225,7 +225,7 @@ public class DSpaceUtils
                 
                 if(community!=null)
                 {
-                    prettyName += community.getMetadata("name");
+                    prettyName += community.getName();
                 }
                 else
                 {
