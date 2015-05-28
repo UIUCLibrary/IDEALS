@@ -215,6 +215,12 @@
             <classifier>classes</classifier>
         </dependency>
 
+        <!-- UR Stats API -->
+        <dependency>
+            <groupId>edu.ur.dspace</groupId>
+            <artifactId>ur-stats-api</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>

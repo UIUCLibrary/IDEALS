@@ -94,16 +94,11 @@
              "TexasDigitalLibrary" aspect. -->
         <!--<aspect name="ETD Search" path="resource://aspects/ETDSearch/"/>-->
 
-        <!-- IDEALS Aspect performs some final restructuring of the
-             DRI document, in order to prepare for the IDEALS Theme.
-             (THIS ASPECT SHOULD ALWAYS BE LAST!) -->
-        <aspect name="IDEALS Aspect" path="resource://aspects/IDEALS/" />
-
         <!-- ========================
              Usage Statistics Engines
              ======================== -->
         <!-- By default, DSpace uses a Statistics engine based on SOLR -->
-        <aspect name="Statistics" path="resource://aspects/Statistics/" />
+        <!--<aspect name="Statistics" path="resource://aspects/Statistics/" />-->
 
         <!--
              If you prefer to use "Elastic Search" Statistics, you can uncomment the below
@@ -114,6 +109,18 @@
 
         <!-- Additionally you may choose to expose your Google Analytics statistics in DSpace -->
         <!-- <aspect name="StatisticsGoogleAnalytics" path="resource://aspects/StatisticsGoogleAnalytics/" /> -->
+
+        <!--
+             IDEALS uses the University of Rochester statistics package
+             There are six parts in this aspect
+             1: IDEALS DOWNLOAD(statistics)( homepage)
+             2: Top Ten download Article title list(homepage)
+             3: Recent Additions(5 items)(homepage)
+             4: Community Download
+             5: Collection download
+             6: item download
+        -->
+        <aspect name = "IDEALS Statistics" path = "resource://aspects/RochesterStatistics/" />
 
         <!-- =========================
              Approval Workflow Systems
@@ -159,7 +166,16 @@
             It may be useful to developers in developing new aspects or themes.
             It's accessible for admins in the XMLTest menu or via the /XMLTest/ URL.
         -->
-        <!-- <aspect name="XML Tests" path="resource://aspects/XMLTest/"/> -->
+         <!--<aspect name="XML Tests" path="resource://aspects/XMLTest/"/>-->
+
+
+        <!-- ============
+             IDEALS Theme
+             ============ -->
+        <!-- IDEALS Aspect performs some final restructuring of the
+             DRI document, in order to prepare for the IDEALS Theme.
+             (THIS ASPECT SHOULD ALWAYS BE LAST!) -->
+        <aspect name="IDEALS Aspect" path="resource://aspects/IDEALS/" />
     </aspects>
 
     <!--

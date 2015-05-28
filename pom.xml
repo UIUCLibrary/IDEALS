@@ -35,6 +35,7 @@
         <solr.version>4.10.2</solr.version>
         <jena.version>2.12.0</jena.version>
         <slf4j.version>1.6.1</slf4j.version>
+        <ur-stats.version>2.0-SNAPSHOT</ur-stats.version>
         <!-- 'root.basedir' is the path to the root [dspace-src] dir. It must be redefined by each child POM,
              as it is used to reference the LICENSE_HEADER and *.properties file(s) in that directory. -->
         <root.basedir>${basedir}</root.basedir>
@@ -867,6 +868,14 @@
             <artifactId>sword-common</artifactId>
             <version>1.1</version>
          </dependency>
+
+          <!-- U of Rochester Statistics API -->
+          <dependency>
+              <groupId>edu.ur.dspace</groupId>
+              <artifactId>ur-stats-api</artifactId>
+              <version>${ur-stats.version}</version>
+          </dependency>
+
         <!-- Explicitly Specify Latest Version of Spring -->
         <dependency>
             <artifactId>spring-core</artifactId>
