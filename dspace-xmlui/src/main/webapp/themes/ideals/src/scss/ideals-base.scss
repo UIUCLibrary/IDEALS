@@ -148,3 +148,12 @@ button {
 /* bicubic resizing for non-native sized IMG:
    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
 .ie7 img { -ms-interpolation-mode: bicubic; }
+
+.label-default {
+  background-color: $ideals-blue;
+}
+
+.label-default[href]:focus, .label-default[href]:hover {
+  background-color: $ideals-orange;
+}
+

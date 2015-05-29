@@ -2743,6 +2743,14 @@ button {
   -ms-interpolation-mode: bicubic;
 }
 
+.label-default {
+  background-color: #587498;
+}
+
+.label-default[href]:focus, .label-default[href]:hover {
+  background-color: #F3843E;
+}
+
 /**
  *
  * ideals-fonts.scss

@@ -2484,7 +2484,7 @@
     <message key="xmlui.dri2xhtml.METS-1.0.item-oclc">OCLC Identifier</message>
     <message key="xmlui.dri2xhtml.METS-1.0.item-metadata-head">Description</message>
     <message key="xmlui.dri2xhtml.METS-1.0.item-files-no-description">(no description provided)</message>
-    <message key="xmlui.dri2xhtml.METS-1.0.item-persistent-identifier">Persistent Identifier</message>
+    <message key="xmlui.dri2xhtml.METS-1.0.item-persistent-identifier">Handle</message>
 
     <!-- IDEALS ETD -->
     <message key="xmlui.dri2xhtml.METS-1.0.item-thesis-degreeName">Degree</message>

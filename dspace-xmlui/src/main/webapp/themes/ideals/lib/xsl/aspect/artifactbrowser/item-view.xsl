@@ -203,28 +203,55 @@
 
             <!-- identifier.uri row -->
             <xsl:when test="$clause = 3 and (dim:field[@element='identifier' and @qualifier='uri' and descendant::text()])">
-                <div class="simple-item-view-other alert alert-success">
-
-                    <span class="bold"><i18n:text>xmlui.dri2xhtml.METS-1.0.item-persistent-identifier</i18n:text>: </span>
-
-                    <span>
+                <div class="simple-item-view-other">
+                    <dl>
+                        <dt><i18n:text>xmlui.dri2xhtml.METS-1.0.item-persistent-identifier</i18n:text>: </dt>
 
                         <!--URI is the unique identifier (e.g. hdl:2142/2)-->
                         <xsl:variable name="uri" select="/mets:METS/@ID"/>
                         <!--URL is the actual hdl.handle.net URL (e.g. http://hdl.handle.net/2142/2)-->
-                        <xsl:variable name="url">
+                        <xsl:variable name="hdl">
                             <xsl:if test="contains($uri, 'hdl:')">
                                 <xsl:text>http://hdl.handle.net/</xsl:text>
                                 <xsl:value-of select="substring-after($uri, 'hdl:')"/>
                             </xsl:if>
                         </xsl:variable>
-                        <a>
-                            <xsl:attribute name="href">
-                                <xsl:value-of select="$url"/>
-                            </xsl:attribute>
-                            <xsl:value-of select="$url"/>
-                        </a>
-                    </span>
+
+                        <!--HDL badge-->
+                        <dd>
+                            <a>
+                                <xsl:attribute name="href">
+                                    <xsl:value-of select="$hdl"/>
+                                </xsl:attribute>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="240" height="20">
+                                    <linearGradient id="b" x2="0" y2="100%">
+                                        <stop offset="0" stop-color="#bbb" stop-opacity=".1" />
+                                        <stop offset="1" stop-opacity=".1" />
+                                    </linearGradient>
+                                    <mask id="a">
+                                        <rect width="234" height="20" rx="3" fill="#fff" />
+                                    </mask>
+                                    <g mask="url(#a)">
+                                        <path fill="#587498" d="M0 0h33v20H0z" />
+                                        <path fill="#F3843E" d="M33 0h201v20H33z" />
+                                        <path fill="url(#b)" d="M0 0h234v20H0z" />
+                                    </g>
+                                    <g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif"
+                                            font-size="11">
+                                        <text x="16.5" y="15" fill="#010101" fill-opacity=".3">HDL</text>
+                                        <text x="16.5" y="14">HDL</text>
+                                        <text x="132.5" y="15" fill="#010101" fill-opacity=".3">
+                                            <xsl:value-of select="$hdl" />
+                                        </text>
+                                        <text x="132.5" y="14">
+                                            <xsl:value-of select="$hdl" />
+                                        </text>
+                                    </g>
+                                </svg>
+                            </a>
+                        </dd>
+
+                    </dl>
 
                     <!--IDEALS: put URI in a box-->
                     <!--URI is the unique identifier (e.g. hdl:2142/2)-->
@@ -745,7 +772,8 @@
 
                         <!--As long as there are more values for this field, show value separator-->
                         <xsl:if test="position() != last()">
-                            <xsl:copy-of select="$value-separator"/>
+                            <!--<xsl:copy-of select="$value-separator"/>-->
+                            <xsl:text> </xsl:text>
                         </xsl:if>
                     </xsl:for-each>
                 </td>
@@ -774,14 +802,14 @@
             <xsl:when test="$link_url">
                 <!-- Add value to Link URL and make a clickable link, by replacing
                      the text ##VALUE## with this metadata field's value -->
-                <a>
+                <span style="display: inline-block; font-size: larger;"><a class="label label-default">
                     <xsl:attribute name="href">
                         <xsl:value-of select="substring-before($link_url,'##VALUE##')"/>
                         <xsl:value-of select="./node()"/>
                         <xsl:value-of select="substring-after($link_url,'##VALUE##')"/>
                     </xsl:attribute>
                     <xsl:value-of select="./node()"/>
-                </a>
+                </a></span>
             </xsl:when>
             <!-- Dates -->
             <xsl:when test="$type='date'">
