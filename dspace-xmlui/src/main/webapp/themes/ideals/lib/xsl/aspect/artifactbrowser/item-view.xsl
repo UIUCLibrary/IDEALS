@@ -204,54 +204,48 @@
             <!-- identifier.uri row -->
             <xsl:when test="$clause = 3 and (dim:field[@element='identifier' and @qualifier='uri' and descendant::text()])">
                 <div class="simple-item-view-other">
-                    <dl>
-                        <dt><i18n:text>xmlui.dri2xhtml.METS-1.0.item-persistent-identifier</i18n:text>: </dt>
 
-                        <!--URI is the unique identifier (e.g. hdl:2142/2)-->
-                        <xsl:variable name="uri" select="/mets:METS/@ID"/>
-                        <!--URL is the actual hdl.handle.net URL (e.g. http://hdl.handle.net/2142/2)-->
-                        <xsl:variable name="hdl">
-                            <xsl:if test="contains($uri, 'hdl:')">
-                                <xsl:text>http://hdl.handle.net/</xsl:text>
-                                <xsl:value-of select="substring-after($uri, 'hdl:')"/>
-                            </xsl:if>
-                        </xsl:variable>
+                    <!--URI is the unique identifier (e.g. hdl:2142/2)-->
+                    <xsl:variable name="uri" select="/mets:METS/@ID"/>
+                    <!--URL is the actual hdl.handle.net URL (e.g. http://hdl.handle.net/2142/2)-->
+                    <xsl:variable name="hdl">
+                        <xsl:if test="contains($uri, 'hdl:')">
+                            <xsl:text>http://hdl.handle.net/</xsl:text>
+                            <xsl:value-of select="substring-after($uri, 'hdl:')"/>
+                        </xsl:if>
+                    </xsl:variable>
 
-                        <!--HDL badge-->
-                        <dd>
-                            <a>
-                                <xsl:attribute name="href">
-                                    <xsl:value-of select="$hdl"/>
-                                </xsl:attribute>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="240" height="20">
-                                    <linearGradient id="b" x2="0" y2="100%">
-                                        <stop offset="0" stop-color="#bbb" stop-opacity=".1" />
-                                        <stop offset="1" stop-opacity=".1" />
-                                    </linearGradient>
-                                    <mask id="a">
-                                        <rect width="234" height="20" rx="3" fill="#fff" />
-                                    </mask>
-                                    <g mask="url(#a)">
-                                        <path fill="#587498" d="M0 0h33v20H0z" />
-                                        <path fill="#F3843E" d="M33 0h201v20H33z" />
-                                        <path fill="url(#b)" d="M0 0h234v20H0z" />
-                                    </g>
-                                    <g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif"
-                                            font-size="11">
-                                        <text x="16.5" y="15" fill="#010101" fill-opacity=".3">HDL</text>
-                                        <text x="16.5" y="14">HDL</text>
-                                        <text x="132.5" y="15" fill="#010101" fill-opacity=".3">
-                                            <xsl:value-of select="$hdl" />
-                                        </text>
-                                        <text x="132.5" y="14">
-                                            <xsl:value-of select="$hdl" />
-                                        </text>
-                                    </g>
-                                </svg>
-                            </a>
-                        </dd>
-
-                    </dl>
+                    <!--HDL badge-->
+                    <a data-toggle="tooltip" data-placement="bottom" title="Persistent Handle: Use this URI when linking to or citing this item">
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="$hdl"/>
+                        </xsl:attribute>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="240" height="20">
+                            <linearGradient id="b" x2="0" y2="100%">
+                                <stop offset="0" stop-color="#bbb" stop-opacity=".1" />
+                                <stop offset="1" stop-opacity=".1" />
+                            </linearGradient>
+                            <mask id="a">
+                                <rect width="234" height="20" rx="3" fill="#fff" />
+                            </mask>
+                            <g mask="url(#a)">
+                                <path fill="#587498" d="M0 0h33v20H0z" />
+                                <path fill="#F3843E" d="M33 0h201v20H33z" />
+                                <path fill="url(#b)" d="M0 0h234v20H0z" />
+                            </g>
+                            <g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif"
+                                    font-size="11">
+                                <text x="16.5" y="15" fill="#010101" fill-opacity=".3">HDL</text>
+                                <text x="16.5" y="14">HDL</text>
+                                <text x="132.5" y="15" fill="#010101" fill-opacity=".3">
+                                    <xsl:value-of select="$hdl" />
+                                </text>
+                                <text x="132.5" y="14">
+                                    <xsl:value-of select="$hdl" />
+                                </text>
+                            </g>
+                        </svg>
+                    </a>
 
                     <!--IDEALS: put URI in a box-->
                     <!--URI is the unique identifier (e.g. hdl:2142/2)-->
@@ -442,7 +436,7 @@
                         <xsl:with-param name="label"><i18n:text>xmlui.dri2xhtml.METS-1.0.item-author</i18n:text></xsl:with-param>
                         <xsl:with-param name="link_url"
                                         select="concat($context-path,'/browse?type=author&amp;value=##VALUE##')"/>
-                        <xsl:with-param name="value-separator">; </xsl:with-param>
+                        <xsl:with-param name="value-separator"> </xsl:with-param>
                     </xsl:call-template>
 
 
@@ -462,7 +456,7 @@
                                 <xsl:with-param name="label"><i18n:text>xmlui.dri2xhtml.METS-1.0.item-advisor</i18n:text></xsl:with-param>
                                 <xsl:with-param name="link_url"
                                                 select="concat($context-path,'/browse?type=contributor&amp;value=##VALUE##')"/>
-                                <xsl:with-param name="value-separator">; </xsl:with-param>
+                                <xsl:with-param name="value-separator"> </xsl:with-param>
                             </xsl:call-template>
 
                             <!-- Other Contributors = dc.contributor.* -->
@@ -473,7 +467,7 @@
                                 <xsl:with-param name="label"><i18n:text>xmlui.dri2xhtml.METS-1.0.item-contributor</i18n:text></xsl:with-param>
                                 <xsl:with-param name="link_url"
                                                 select="concat($context-path,'/browse?type=contributor&amp;value=##VALUE##')"/>
-                                <xsl:with-param name="value-separator">; </xsl:with-param>
+                                <xsl:with-param name="value-separator"> </xsl:with-param>
                             </xsl:call-template>
                         </xsl:otherwise>
                     </xsl:choose>
@@ -486,6 +480,7 @@
                         <xsl:with-param name="label"><i18n:text>xmlui.dri2xhtml.METS-1.0.item-subject</i18n:text></xsl:with-param>
                         <xsl:with-param name="link_url"
                                         select="concat($context-path,'/browse?type=subject&amp;value=##VALUE##')"/>
+                        <xsl:with-param name="value-separator"> </xsl:with-param>
                     </xsl:call-template>
 
                     <!-- Geographic Coverage = dc.coverage.spatial -->
@@ -772,7 +767,7 @@
 
                         <!--As long as there are more values for this field, show value separator-->
                         <xsl:if test="position() != last()">
-                            <!--<xsl:copy-of select="$value-separator"/>-->
+                            <xsl:copy-of select="$value-separator"/>
                             <xsl:text> </xsl:text>
                         </xsl:if>
                     </xsl:for-each>
