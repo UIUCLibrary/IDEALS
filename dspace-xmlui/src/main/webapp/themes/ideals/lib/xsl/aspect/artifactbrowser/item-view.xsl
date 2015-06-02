@@ -247,6 +247,8 @@
                         </svg>
                     </a>
 
+                    <xsl:call-template name="DisplayScopusCitationCount"/>
+
                     <!--IDEALS: put URI in a box-->
                     <!--URI is the unique identifier (e.g. hdl:2142/2)-->
                     <!--<xsl:variable name="uri" select="/mets:METS/@ID"/>-->
@@ -1791,22 +1793,22 @@
         <xsl:variable name="doi" select="//dim:field[@mdschema='dc' and @element='identifier' and @qualifier='doi']"/>
 
         <!-- Only include if we have found a DOI -->
-        <xsl:if test="$doi">
-            <div id="scopus_citedbybox">
-                <span class="bold">
-                    <xsl:text>This item has been cited </xsl:text>
-                    <a id="scopus_citedbycount">
-                        <xsl:attribute name="doi">
-                            <xsl:value-of select="$doi"/>
-                        </xsl:attribute>
-                        <xsl:text>...</xsl:text>
-                    </a>
-                    times
-                </span>
-                (data provided by <a href="http://www.scopus.com">Scopus</a>)
-            </div>
-            <!-- <div id="scapiDebugArea">Debug:</div> -->
-        </xsl:if>
+        <!--<xsl:if test="$doi">-->
+            <!--<div id="scopus_citedbybox">-->
+                <!--<span class="bold">-->
+                    <!--<xsl:text>This item has been cited </xsl:text>-->
+                    <!--<a id="scopus_citedbycount">-->
+                        <!--<xsl:attribute name="doi">-->
+                            <!--<xsl:value-of select="$doi"/>-->
+                        <!--</xsl:attribute>-->
+                        <!--<xsl:text>...</xsl:text>-->
+                    <!--</a>-->
+                    <!--times-->
+                <!--</span>-->
+                <!--(data provided by <a href="http://www.scopus.com">Scopus</a>)-->
+            <!--</div>-->
+            <!--&lt;!&ndash; <div id="scapiDebugArea">Debug:</div> &ndash;&gt;-->
+        <!--</xsl:if>-->
     </xsl:template>
 
 </xsl:stylesheet>

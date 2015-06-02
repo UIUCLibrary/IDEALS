@@ -1505,6 +1505,46 @@
                     })();
                 </xsl:text></script>
         </xsl:if>
+
+
+
+        <!-- Include Scopus JavaScript in individual item view pages -->
+        <xsl:if test="/dri:document/dri:body[@id='aspect.artifactbrowser.ItemViewer.div.item-view']">
+            <script type="text/javascript" src="http://searchapi.scopus.com/scripts/scapi.jsp">
+                <xsl:text> </xsl:text>
+            </script>
+            <script type="text/javascript">
+                <xsl:text disable-output-escaping="yes"><![CDATA[
+                  function getScopusCitationCountElement() {
+                    return document.getElementById('scopus_citedbycount');
+                  }
+                  function scopusCallback() {
+                    if (!scapi.areSearchResultsValid() || scapi.getNumResults() < 1)
+                      return;
+                    var citedbycount = scapi.getField(0, 'citedbycount');
+                    if (citedbycount > 0) {
+                      var element = getScopusCitationCountElement();
+                      element.innerHTML = citedbycount;
+                      element.href = scapi.getField(0, 'inwardurl').replace(/&amp;/g, '&');
+                      document.getElementById('scopus_citedbybox').className = 'visible';
+                    }
+                  }
+                  Event.observe(window, 'load',
+                    function() {
+                      var element = getScopusCitationCountElement();
+                      if (element) {
+                        scapi.setDeveloperID('5mjQIVtrB0VZJg6E9HCR7tjnUoAqq1');
+                        // scapi.setDebug(true);
+                        scapi.setCallback(scopusCallback);
+                        var search = new searchObj();
+                        search.setSearch(element.getAttribute('doi'));
+                        scapi.runSearch(search);
+                      }
+                    });
+                  ]]></xsl:text>
+            </script>
+        </xsl:if>
+
     </xsl:template>
 
 </xsl:stylesheet>
