@@ -144,9 +144,24 @@
         </div>
     </xsl:template>
 
+    <!--IDEALS-->
+    <!--Surpress global browse on item view-->
+    <xsl:template match="dri:options[../dri:body[@n='item-view']]/dri:list/dri:list[@id='aspect.browseArtifacts.Navigation.list.global']" priority="3" mode="nested">
+
+    </xsl:template>
+    <!--Surpress global browse on collection view-->
+    <xsl:template match="dri:options[../dri:body[@n='collection-home']]/dri:list/dri:list[@id='aspect.browseArtifacts.Navigation.list.global']" priority="3" mode="nested">
+
+    </xsl:template>
+    <!--Surpress global browse on community view-->
+    <xsl:template match="dri:options[../dri:body[@n='community-home']]/dri:list/dri:list[@id='aspect.browseArtifacts.Navigation.list.global']" priority="3" mode="nested">
+
+    </xsl:template>
+
     <xsl:template match="dri:options//dri:item" mode="nested" priority="3">
         <xsl:apply-templates />
     </xsl:template>
+
 
     <xsl:template match="dri:options//dri:item/dri:xref">
         <a>
