@@ -16,7 +16,8 @@
          and substitute them in the template that displays browse by author, title, and date items in dri:body
          of both the Collection and Community homepages.
      -->
-    <xsl:template match="dri:list[@id='aspect.artifactbrowser.CommunityViewer.list.community-browse' or @id='aspect.artifactbrowser.CollectionViewer.list.collection-browse']">
+    <xsl:template match="dri:list[@id='aspect.artifactbrowser.CommunityViewer.list.community-browse' or
+                                  @id='aspect.artifactbrowser.CollectionViewer.list.collection-browse']">
       <xsl:copy>
           <xsl:copy-of select="@*"/>
           <!--Display Normal Heading-->
@@ -29,7 +30,8 @@
       </xsl:copy>
     </xsl:template>
 
-    <xsl:template match="dri:div[@id='aspect.artifactbrowser.CommunityViewer.div.community-search-browse' or @id='aspect.artifactbrowser.CollectionViewer.div.collection-search-browse']">
+    <xsl:template match="dri:div[@id='aspect.artifactbrowser.CommunityViewer.div.community-search-browse' or
+                                 @id='aspect.artifactbrowser.CollectionViewer.div.collection-search-browse']">
         <xsl:copy>
             <xsl:copy-of select="@*"/>
             <xsl:apply-templates />
