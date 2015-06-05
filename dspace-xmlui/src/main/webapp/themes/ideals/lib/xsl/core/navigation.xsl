@@ -145,17 +145,22 @@
     </xsl:template>
 
     <!--IDEALS-->
-    <!--Surpress global browse on item view-->
-    <xsl:template match="dri:options[../dri:body[@n='item-view']]/dri:list/dri:list[@id='aspect.browseArtifacts.Navigation.list.global']" priority="3" mode="nested">
+    <!--&lt;!&ndash;Suppress global browse on item view&ndash;&gt;-->
+    <!--<xsl:template match="dri:options[../dri:body[@n='item-view']]/dri:list/dri:list[@id='aspect.browseArtifacts.Navigation.list.global']" priority="3" mode="nested">-->
+        <!--<xsl:comment>Suppressed global browse on item view</xsl:comment>-->
+    <!--</xsl:template>-->
+    <!--&lt;!&ndash;Suppress global browse on collection view&ndash;&gt;-->
+    <!--<xsl:template match="dri:options[../dri:body[@n='collection-home']]/dri:list/dri:list[@id='aspect.browseArtifacts.Navigation.list.global']" priority="3" mode="nested">-->
+        <!--<xsl:comment>Suppressed global browse on collection home</xsl:comment>-->
+    <!--</xsl:template>-->
+    <!--&lt;!&ndash;Suppress global browse on community view&ndash;&gt;-->
+    <!--<xsl:template match="dri:options[../dri:body[@n='community-home']]/dri:list/dri:list[@id='aspect.browseArtifacts.Navigation.list.global']" priority="3" mode="nested">-->
+        <!--<xsl:comment>Suppressed global browse on community home</xsl:comment>-->
+    <!--</xsl:template>-->
+
+    <!--Suppress global browse everywhere but the home page-->
+    <xsl:template match="dri:options[../dri:body[not(@n='news')]]/dri:list/dri:list[@id='aspect.browseArtifacts.Navigation.list.global']" priority="3" mode="nested">
         <xsl:comment>Suppressed global browse on item view</xsl:comment>
-    </xsl:template>
-    <!--Surpress global browse on collection view-->
-    <xsl:template match="dri:options[../dri:body[@n='collection-home']]/dri:list/dri:list[@id='aspect.browseArtifacts.Navigation.list.global']" priority="3" mode="nested">
-        <xsl:comment>Suppressed global browse on collection home</xsl:comment>
-    </xsl:template>
-    <!--Surpress global browse on community view-->
-    <xsl:template match="dri:options[../dri:body[@n='community-home']]/dri:list/dri:list[@id='aspect.browseArtifacts.Navigation.list.global']" priority="3" mode="nested">
-        <xsl:comment>Suppressed global browse on community home</xsl:comment>
     </xsl:template>
 
     <xsl:template match="dri:options//dri:item" mode="nested" priority="3">
